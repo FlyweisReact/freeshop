@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@font-face {
+  font-family: 'Lato';
+  /* Changed font name to match the font being loaded */
+  src: url('/assets/fonts/Lato/Lato-Regular.ttf') format('truetype');
+  /* Use root-relative path */
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Lato", serif;
+  margin: 0;
+  padding: 0;
+}
+
+code {
+  font-family: "Lato", serif;
+}
+
+html,
+* {
+  font-family: "Lato", serif;
+}
+
+:root {
+  margin: 0;
+  padding: 0;
+}
