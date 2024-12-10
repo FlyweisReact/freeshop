@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import FilterSidebar from "../../components/FilterDropdown/FilterDropdown";
 import { products as productsData } from "../../data/products";
-
+import './ProductList.css'
 
 
 const categories = [
@@ -13,7 +13,7 @@ const categories = [
     "Video games & Consoles",
 ];
 
-const Home = () => {
+const ProductList = () => {
     const { categoryName } = useParams();
     const [category, setCategory] = useState(null);
 
@@ -70,4 +70,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default ProductList;
