@@ -1,0 +1,9 @@
+.home-container {}
+
+
+.home-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+    gap: 0.5rem;
+    margin-top: 1rem;
+}

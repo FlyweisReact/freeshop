@@ -61,11 +61,12 @@
 
 .productlist-products-div {
     /* border: 1px solid red; */
+    cursor: pointer;
 }
 
 .productlist-products-image {
-    width: 193.33px;
-    height: 193.33px;
+    width: 200px;
+    height: 200px;
     border-radius: 4px;
     overflow: hidden;
 }
@@ -83,7 +84,7 @@
 
 .productlist-products-content h6{
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 28px;
     color: #121212;
     margin: 0;

@@ -1,0 +1,28 @@
+.qrcode-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+
+.qrcode-center{
+    text-align: center;
+}
+
+.qrcode-center h6{
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 20px;
+    letter-spacing: -0.4000000059604645px;
+    color: #E25845;
+    margin: 0;
+}
+
+.qrcode-center p{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
+    color: #E25845;
+    margin: 0;
+}
