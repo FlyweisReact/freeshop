@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './FilterDropdown.css'
 
-const FilterSidebar = ({ categories, onApplyFilter }) => {
+const FilterSidebar = ({ categories, onApplyFilter, activecategory }) => {
     const [minPrice, setMinPrice] = useState("");
     const [maxPrice, setMaxPrice] = useState("");
     const [selectedConditions, setSelectedConditions] = useState([]);
@@ -39,7 +39,7 @@ const FilterSidebar = ({ categories, onApplyFilter }) => {
             {/* Categories Section */}
             <div className="filter-section">
                 <p>All Categories</p>
-                <h6>Electronics & Media</h6>
+                <h6>{activecategory}</h6>
                 <ul>
                     {categories.map((category, index) => (
                         <li key={index}>{category}</li>

@@ -12,6 +12,13 @@ export const products = {
             "Apple TVs",
             "Fitbit",
         ],
+        categories:[
+            "Audio & Speakers",
+            "Cell Phones & Accessories",
+            "Cameras & Photography",
+            "TV & Media players",
+            "Video games & Consoles",
+        ],
         products: [
             {
                 id: 1,
@@ -27,7 +34,7 @@ export const products = {
                 price: 349,
                 location: "New York, USA"
             },
-           
+
         ]
     },
     "home-garden": {
@@ -40,33 +47,12 @@ export const products = {
             "Apple TVs",
             "Fitbit",
         ],
-        products: [
-            {
-                id: 1,
-                name: "Nintendo Switch (OLE…",
-                image: img,
-                price: 399,
-                location: "California, USA"
-            },
-            {
-                id: 2,
-                name: "Nintendo Switch (OLE…",
-                image: img,
-                price: 349,
-                location: "New York, USA"
-            },
-           
-        ]
-    },
-    "clothing-accessories": {
-        categoryName: "Clothing & Accessories",
-        subcategories: [
-            "Apple Watch",
-            "Bluetooth Speaker",
-            "Drone",
-            "Beats",
-            "Apple TVs",
-            "Fitbit",
+        categories:[
+            "Audio & Speakers",
+            "Cell Phones & Accessories",
+            "Cameras & Photography",
+            "TV & Media players",
+            "Video games & Consoles",
         ],
         products: [
             {
@@ -83,7 +69,42 @@ export const products = {
                 price: 349,
                 location: "New York, USA"
             },
-           
+
+        ]
+    },
+    "clothing-accessories": {
+        categoryName: "Clothing & Accessories",
+        subcategories: [
+            "Apple Watch",
+            "Bluetooth Speaker",
+            "Drone",
+            "Beats",
+            "Apple TVs",
+            "Fitbit",
+        ],
+        categories:[
+            "Audio & Speakers",
+            "Cell Phones & Accessories",
+            "Cameras & Photography",
+            "TV & Media players",
+            "Video games & Consoles",
+        ],
+        products: [
+            {
+                id: 1,
+                name: "Nintendo Switch (OLE…",
+                image: img,
+                price: 399,
+                location: "California, USA"
+            },
+            {
+                id: 2,
+                name: "Nintendo Switch (OLE…",
+                image: img,
+                price: 349,
+                location: "New York, USA"
+            },
+
         ]
     },
     // Add more categories here

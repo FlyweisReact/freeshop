@@ -3,6 +3,7 @@ import { products } from '../../data/HomeData'; // Adjust the path based on your
 
 import './Home.css'
 import QRcode from '../../components/CommonComponent/QRcode';
+import SeachByCities from '../../components/CommonComponent/SeachByCities';
 
 const Home = () => {
     const [category, setCategory] = useState(null);
@@ -39,6 +40,12 @@ const Home = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+                <div className='home-products-button'>
+                    <button>View more</button>
+                </div>
+                <div className='home-city'>
+                    <SeachByCities />
                 </div>
             </div>
         </>

@@ -214,21 +214,42 @@ export const products = {
         {
             id: 24,
             name: "Jordan 9 Gym Red White",
-            image: img21,
+            image: img23,
             price: 300,
             location: "Columbus, OH"
         },
         {
             id: 25,
             name: "Jordan 1 Union/size 11",
-            image: img32,
+            image: img20,
             price: 200,
             location: "Detroit, MI"
         },
         {
             id: 24,
             name: "Jordan 9 Gym Red White",
-            image: img33,
+            image: img17,
+            price: 300,
+            location: "Columbus, OH"
+        },
+        {
+            id: 25,
+            name: "Jordan 1 Union/size 11",
+            image: img16,
+            price: 200,
+            location: "Detroit, MI"
+        },
+        {
+            id: 24,
+            name: "Jordan 9 Gym Red White",
+            image: img15,
+            price: 300,
+            location: "Columbus, OH"
+        },
+        {
+            id: 24,
+            name: "Jordan 9 Gym Red White",
+            image: img21,
             price: 300,
             location: "Columbus, OH"
         },
@@ -242,7 +263,14 @@ export const products = {
         {
             id: 24,
             name: "Jordan 9 Gym Red White",
-            image: img21,
+            image: img32,
+            price: 300,
+            location: "Columbus, OH"
+        },
+        {
+            id: 24,
+            name: "Jordan 9 Gym Red White",
+            image: img33,
             price: 300,
             location: "Columbus, OH"
         },

@@ -3,15 +3,11 @@ import { useEffect, useState } from "react";
 import FilterSidebar from "../../components/FilterDropdown/FilterDropdown";
 import { products as productsData } from "../../data/products";
 import './ProductList.css'
+import QRcode from "../../components/CommonComponent/QRcode";
+import TrackRoute from "../../components/CommonComponent/TrackRoute";
 
 
-const categories = [
-    "Audio & Speakers",
-    "Cell Phones & Accessories",
-    "Cameras & Photography",
-    "TV & Media players",
-    "Video games & Consoles",
-];
+
 
 const ProductList = () => {
     const { categoryName } = useParams();
@@ -36,36 +32,49 @@ const ProductList = () => {
     return (
         <>
             <div className="productlist-container">
-                <div className="productlist-left-filter">
-                    <FilterSidebar categories={categories} onApplyFilter={handleFilterApply} />
+                <div className='home-app'>
+                    <QRcode />
                 </div>
-                <div className="productlist-right">
-                    <div className="productlist-category">
-                        <h6>{category.categoryName}</h6>
+                <div className='home-app-filter'>
+                    <TrackRoute pageName={category.categoryName} />
+                </div>
+                <div className="productlist-container-items">
+                    <div className="productlist-left-filter">
+                        <FilterSidebar
+                            categories={category.categories}
+                            activecategory={category.categoryName}
+                            onApplyFilter={handleFilterApply}
+                        />
                     </div>
-                    <div className="productlist-subcategory">
-                        {category.subcategories.map((subcategory, index) => (
-                            <div className="productlist-subcategory-div" key={index}>
-                                <p>{subcategory}</p>
-                            </div>
-                        ))}
-                    </div>
-                    <div className="productlist-products">
-                        {category.products.map((product) => (
-                            <div className="productlist-products-div" key={product.id}>
-                                <div className="productlist-products-image">
-                                    <img src={product.image} alt={product.name} />
+                    <div className="productlist-right">
+                        <div className="productlist-category">
+                            <h6>{category.categoryName}</h6>
+                        </div>
+                        <div className="productlist-subcategory">
+                            {category.subcategories.map((subcategory, index) => (
+                                <div className="productlist-subcategory-div" key={index}>
+                                    <p>{subcategory}</p>
                                 </div>
-                                <div className="productlist-products-content">
-                                    <h6>{product.name}</h6>
-                                    <span>${product.price}</span>
-                                    <p>{product.location}</p>
+                            ))}
+                        </div>
+                        <div className="productlist-products">
+                            {category.products.map((product) => (
+                                <div className="productlist-products-div" key={product.id}>
+                                    <div className="productlist-products-image">
+                                        <img src={product.image} alt={product.name} />
+                                    </div>
+                                    <div className="productlist-products-content">
+                                        <h6>{product.name}</h6>
+                                        <span>${product.price}</span>
+                                        <p>{product.location}</p>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
+
         </>
     );
 };
