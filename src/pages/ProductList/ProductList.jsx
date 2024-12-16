@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import FilterSidebar from "../../components/FilterDropdown/FilterDropdown";
 import { products as productsData } from "../../data/products";
@@ -59,18 +59,25 @@ const ProductList = () => {
                         </div>
                         <div className="productlist-products">
                             {category.products.map((product) => (
-                                <div className="productlist-products-div" key={product.id}>
-                                    <div className="productlist-products-image">
-                                        <img src={product.image} alt={product.name} />
+                                <Link
+                                    to={`/product`} // Navigate to the product details page with the product ID
+                                    key={product.id}
+                                    className="link"
+                                >
+                                    <div className="productlist-products-div">
+                                        <div className="productlist-products-image">
+                                            <img src={product.image} alt={product.name} />
+                                        </div>
+                                        <div className="productlist-products-content">
+                                            <h6>{product.name}</h6>
+                                            <span>${product.price}</span>
+                                            <p>{product.location}</p>
+                                        </div>
                                     </div>
-                                    <div className="productlist-products-content">
-                                        <h6>{product.name}</h6>
-                                        <span>${product.price}</span>
-                                        <p>{product.location}</p>
-                                    </div>
-                                </div>
+                                </Link>
                             ))}
                         </div>
+
                     </div>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import { products } from '../../data/HomeData'; // Adjust the path based on your
 import './Home.css'
 import QRcode from '../../components/CommonComponent/QRcode';
 import SeachByCities from '../../components/CommonComponent/SeachByCities';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [category, setCategory] = useState(null);
@@ -29,16 +30,22 @@ const Home = () => {
                 </div>
                 <div className="home-products">
                     {category.products.map((product) => (
-                        <div className="productlist-products-div" key={product.id}>
-                            <div className="productlist-products-image">
-                                <img src={product.image} alt={product.name} />
+                        <Link
+                            to={`/product`} // Navigate to the product details page with the product ID
+                            key={product.id}
+                            className="link"
+                        >
+                            <div className="productlist-products-div" key={product.id}>
+                                <div className="productlist-products-image">
+                                    <img src={product.image} alt={product.name} />
+                                </div>
+                                <div className="productlist-products-content">
+                                    <h6>{product.name}</h6>
+                                    <span>${product.price}</span>
+                                    <p>{product.location}</p>
+                                </div>
                             </div>
-                            <div className="productlist-products-content">
-                                <h6>{product.name}</h6>
-                                <span>${product.price}</span>
-                                <p>{product.location}</p>
-                            </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
                 <div className='home-products-button'>
