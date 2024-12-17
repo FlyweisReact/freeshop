@@ -3,9 +3,11 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 
 const Footer = () => {
+    const navigate = useNavigate()
     return (
         <>
             <div className="footer-container">
@@ -15,7 +17,7 @@ const Footer = () => {
                             <div className="footer-main-links">
                                 <h6>Shop</h6>
                                 <ul>
-                                    <li>How it works</li>
+                                    <li onClick={()=>navigate('/aboutus')}>How it works</li>
                                     <li>Explore</li>
                                     <li>Trust & safety</li>
                                     <li>Safe trade spots</li>
