@@ -1,0 +1,58 @@
+/* Container styling */
+.browse-list-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: #000;
+}
+
+/* Header styling */
+.browse-header {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Grid layout for the items */
+.browse-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns */
+    gap: 16px 24px;
+    /* Row and column gaps */
+}
+
+/* Individual item styling */
+.browse-item {
+    font-size: 14px;
+    margin: 0;
+    color: #333;
+    cursor: pointer;
+}
+
+.browse-item:hover {
+    color: #E25845;
+    /* Highlight color on hover */
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .browse-grid {
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .browse-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 columns for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .browse-grid {
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 column for very small screens */
+    }
+}

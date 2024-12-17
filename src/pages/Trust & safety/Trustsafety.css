@@ -1,0 +1,113 @@
+/* Container Styling */
+.trust-container {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Top Banner Section */
+.top-banner {
+    display: flex;
+    background-color: #fce9e5;
+    padding: 2rem 10%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-banner img {
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.banner-content {
+    max-width: 500px;
+}
+
+.banner-content h1 {
+    color: #d64545;
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.banner-content p {
+    color: #555;
+    font-size: 1.2rem;
+}
+
+/* Circular Image Content Section */
+.trust-content {
+    display: flex;
+    align-items: center;
+    padding: 3rem 10%;
+    gap: 2rem;
+}
+
+.circle-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.trust-text h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.trust-text p {
+    color: #666;
+}
+
+.trust-text a {
+    color: #d64545;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Experience Section */
+.experience-section {
+    padding: 3rem 10%;
+    background-color: #fafafa;
+}
+
+.experience-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.grid-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.grid-item p {
+    color: #555;
+}
+
+/* Images Section */
+.experience-images {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.experience-images img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.experience-images .circle-image {
+    border-radius: 50%;
+}

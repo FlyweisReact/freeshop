@@ -18,8 +18,8 @@ const Footer = () => {
                                 <h6>Shop</h6>
                                 <ul>
                                     <li onClick={()=>navigate('/aboutus')}>How it works</li>
-                                    <li>Explore</li>
-                                    <li>Trust & safety</li>
+                                    <li onClick={()=>navigate('/explore')}>Explore</li>
+                                    <li onClick={()=>navigate('/trust-safety')}>Trust & safety</li>
                                     <li>Safe trade spots</li>
                                 </ul>
                             </div>

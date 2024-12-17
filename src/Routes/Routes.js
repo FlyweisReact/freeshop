@@ -2,10 +2,12 @@
 
 import AboutUs from "../pages/About Us/AboutUs";
 import Chat from "../pages/Chat/Chat";
+import BrowseList from "../pages/Explore/Explore";
 import Post from "../pages/Post/Post";
 import ProductDetails from "../pages/ProductDetail/ProductDetails";
 import ProductList from "../pages/ProductList/ProductList";
 import Thanks from "../pages/Thankyou/Thanks";
+import TrustSection from "../pages/Trust & safety/Trustsafety";
 import Home from "/src/pages/Home/Home.jsx";
 
 
@@ -38,6 +40,14 @@ const allRoutes = [
     {
         route: "/post/thank-you",
         component: Thanks,
+    },
+    {
+        route: "/explore",
+        component: BrowseList,
+    },
+    {
+        route: "/trust-safety",
+        component: TrustSection,
     },
 ];
 

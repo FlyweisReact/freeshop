@@ -32,7 +32,7 @@
 
 .about-us-second {
     text-align: start;
-    max-width: 1000px;
+    padding: 4rem 5rem 4rem 5rem;
 }
 
 .about-us-second h5 {
@@ -41,6 +41,7 @@
     line-height: 44px;
     color: #E25845;
     margin: 0;
+    text-align: start;
 }
 
 .about-us-second p {
@@ -50,10 +51,11 @@
     color: #121212;
     margin: 0;
     margin-top: 1rem;
+    text-align: start;
 }
 
 .about-us-third {
-    height: 174px;
+    height: auto;
     padding: 48px 240px 48px 240px;
     background: #FADBD7;
     display: flex;
@@ -84,7 +86,9 @@
 
 
 
-.about-us-fourth {}
+.about-us-fourth {
+    padding: 2rem;
+}
 
 .about-us-fourth h6 {
     font-weight: 900;
@@ -97,14 +101,14 @@
 .about-us-fourth-main {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    margin-top: 1rem;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 1.5rem;
 }
 
 .about-us-fourth-div {
     background: #FAFAFA;
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 .about-us-fourth-div-top {
@@ -133,7 +137,7 @@
     width: 56.77px;
     height: 4px;
     background: #E25845;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 
@@ -141,7 +145,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 
@@ -151,7 +155,7 @@
 }
 
 .about-us-fourth-div-post-img {
-    width: 294px;
+    width: auto;
     height: 140px;
     overflow: hidden;
 }
@@ -180,6 +184,7 @@
     display: flex;
     align-items: center;
     gap: 2rem;
+    padding: 4rem 5rem 4rem 5rem;
 }
 
 .about-us-sixth-div-left {
@@ -187,7 +192,7 @@
 }
 
 .about-us-sixth-left-div {
-    
+    margin-bottom: 1.2rem;
 }
 
 .about-us-sixth-left-div h6 {
@@ -220,8 +225,46 @@
     height: 661px;
     overflow: hidden;
 }
-.about-us-sixth-div-right img{
+
+.about-us-sixth-div-right img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.about-us-fivth {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background:
+        linear-gradient(to right, rgba(226, 88, 69, 0.8), rgba(255, 233, 230, 0.8)),
+        url('../../assets/images/img27.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
+    padding: 48px 10vw;
+}
+
+.about-us-fivth  h1 {
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 44px;
+    color: #FFFFFF;
+    margin: 0;
+    text-align: center;
+}
+
+.about-us-fivth  span {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 33px;
+    text-decoration: underline;
+    color: #FFFFFF;
+    margin: 0;
+    cursor: pointer;
+    margin-top: 1rem;
 }
