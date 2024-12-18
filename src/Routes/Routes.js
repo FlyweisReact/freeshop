@@ -1,6 +1,8 @@
 /** @format */
 
 import AboutUs from "../pages/About Us/AboutUs";
+import Autodealerships from "../pages/Auto dealerships/Autodealerships";
+import Blog from "../pages/Blog/Blog";
 import Chat from "../pages/Chat/Chat";
 import BrowseList from "../pages/Explore/Explore";
 import Post from "../pages/Post/Post";
@@ -48,6 +50,14 @@ const allRoutes = [
     {
         route: "/trust-safety",
         component: TrustSection,
+    },
+    {
+        route: "/auto-dealerships",
+        component: Autodealerships,
+    },
+    {
+        route: "/blog",
+        component: Blog,
     },
 ];
 

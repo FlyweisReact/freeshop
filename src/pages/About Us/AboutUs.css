@@ -183,8 +183,9 @@
 .about-us-sixth-div {
     display: flex;
     align-items: center;
-    gap: 2rem;
-    padding: 4rem 5rem 4rem 5rem;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 4rem;
 }
 
 .about-us-sixth-div-left {
@@ -192,7 +193,7 @@
 }
 
 .about-us-sixth-left-div {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.5rem;
 }
 
 .about-us-sixth-left-div h6 {
@@ -201,6 +202,7 @@
     line-height: 33px;
     color: #000000;
     margin: 0;
+    margin-bottom: 0.5rem;
 }
 
 .about-us-sixth-left-div p {
@@ -209,6 +211,8 @@
     line-height: 30px;
     color: #000000;
     margin: 0;
+    width: 85%;
+    margin-bottom: 0.5rem;
 }
 
 .about-us-sixth-left-div span {
@@ -218,11 +222,11 @@
     color: #000000;
     margin: 0;
     text-decoration: underline;
+    cursor: pointer;
 }
 
 .about-us-sixth-div-right {
-    width: 600px;
-    height: 661px;
+    height: 660px;
     overflow: hidden;
 }
 
@@ -249,7 +253,7 @@
     padding: 48px 10vw;
 }
 
-.about-us-fivth  h1 {
+.about-us-fivth h1 {
     font-weight: 900;
     font-size: 40px;
     line-height: 44px;
@@ -258,7 +262,7 @@
     text-align: center;
 }
 
-.about-us-fivth  span {
+.about-us-fivth span {
     font-weight: 400;
     font-size: 22px;
     line-height: 33px;

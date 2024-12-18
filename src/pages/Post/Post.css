@@ -168,8 +168,8 @@
 }
 
 .post-form-inputes-check-btn {
-    width: 123.98px;
-    height: 42px;
+    width: auto;
+    height: auto;
     padding: 9px 20.67px 9px 21px;
     background: #E25845;
     border-radius: 6px;

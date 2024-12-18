@@ -26,8 +26,8 @@ const Footer = () => {
                             <div className="footer-main-links">
                                 <h6>Sell</h6>
                                 <ul>
-                                    <li>Post an item</li>
-                                    <li>Auto dealerships</li>
+                                    <li onClick={()=>navigate('/post')}>Post an item</li>
+                                    <li onClick={()=>navigate('/auto-dealerships')}>Auto dealerships</li>
                                 </ul>
                             </div>
                             <div className="footer-main-links">
@@ -51,7 +51,7 @@ const Footer = () => {
                                 <ul>
                                     <li>Help center</li>
                                     <li>Community</li>
-                                    <li>Blog</li>
+                                    <li onClick={()=>navigate('/blog')}>Blog</li>
                                 </ul>
                             </div>
                         </div>

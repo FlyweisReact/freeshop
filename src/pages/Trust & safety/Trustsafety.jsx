@@ -7,74 +7,64 @@ import plantsImage from "../../assets/images/img30.png";
 
 const TrustSection = () => {
     return (
-        <div className="trust-container">
-            {/* Top Banner Section */}
-            <div className="top-banner">
-                <div className="banner-content">
-                    <h1>The most valuable currency in our marketplace is trust</h1>
-                    <p>
-                        We're building a local marketplace where the wellbeing of buyers and
-                        sellers comes first.
-                    </p>
-                </div>
-                <img src={trustImage} alt="Trust" />
-            </div>
-
-            {/* Circular Image and Content */}
-            <div className="trust-content">
-                <img src={smilingPerson} alt="Smiling Person" className="circle-image" />
-                <div className="trust-text">
-                    <h2>A community built on trust—it’s been our mission since day one</h2>
-                    <p>
-                        Lorem ipsum is simply dummy text of the printing and typesetting
-                        industry. Lorem Ipsum has been the industry standard text.
-                    </p>
-                    <a href="#learn-more">Learn more →</a>
-                </div>
-            </div>
-
-            {/* The Heart of Experience Section */}
-            <div className="experience-section">
-                <h2>The heart of the Freeshopps experience</h2>
-
-                <div className="experience-grid">
-                    {/* Grid Items */}
-                    <div className="grid-item">
-                        <h3>Create a profile</h3>
-                        <p>
-                            Lorem ipsum is simply dummy text of the printing and typesetting
-                            industry.
-                        </p>
+        <>
+            <div className="trust-container">
+                <div className="trust-top">
+                    <div className="trust-top-left">
+                        <h1>The most valuable
+                            currency in our
+                            marketplace is trust</h1>
+                        <p>We’re building a local marketplace where the
+                            wellbeing of buyers and sellers comes first</p>
                     </div>
-                    <div className="grid-item">
-                        <h3>Join Freeshopps</h3>
-                        <p>
-                            Lorem ipsum is simply dummy text of the printing and typesetting
-                            industry.
-                        </p>
-                    </div>
-                    <div className="grid-item">
-                        <h3>Get out and go</h3>
-                        <p>
-                            Lorem ipsum is simply dummy text of the printing and typesetting
-                            industry.
-                        </p>
-                    </div>
-                    <div className="grid-item">
-                        <h3>Find Freeshopps nearby</h3>
-                        <p>
-                            Lorem ipsum is simply dummy text of the printing and typesetting
-                            industry.
-                        </p>
+                    <div className="trust-top-right">
+                        <img src={trustImage} alt="" />
                     </div>
                 </div>
-
-                {/* Images Section */}
-                <div className="experience-images">
-                    <img src={plantsImage} alt="Plants" />
+                <div className="trust-middle">
+                    <div className="trust-middle-left">
+                        <img src={smilingPerson} alt="" />
+                    </div>
+                    <div className="trust-middle-right">
+                        <h4>A community built on trust—it’s
+                            been our mission since day one</h4>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
+                        <span>Learn more →</span>
+                    </div>
+                </div>
+                <div className='about-us-sixth-div'>
+                    <div className='about-us-sixth-div-left'>
+                        <div className="trust-middle-bottom-heading">
+                            <h5>The heart of the Freeshopps
+                                experience</h5>
+                        </div>
+                        <div className='about-us-sixth-left-div'>
+                            <h6>Create a profile</h6>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
+                            <span>Read more→</span>
+                        </div>
+                        <div className='about-us-sixth-left-div'>
+                            <h6>Join TruYou</h6>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
+                            <span>Read more→</span>
+                        </div>
+                        <div className='about-us-sixth-left-div'>
+                            <h6>Get and give ratings</h6>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
+                            <span>Read more→</span>
+                        </div>
+                        <div className='about-us-sixth-left-div'>
+                            <h6>Find MeetUp Spots nearby</h6>
+                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
+                            <span>Read more→</span>
+                        </div>
+                    </div>
+                    <div className='about-us-sixth-div-right'>
+                        <img src={plantsImage} alt="" />
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 };
 
