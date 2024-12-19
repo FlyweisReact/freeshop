@@ -1,0 +1,91 @@
+.careers-second {
+    width: 90%;
+    margin: auto;
+    margin-top: 4rem;
+}
+
+.careers-second h5 {
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 45px;
+    color: #E25845;
+    margin: 0;
+    text-align: center;
+}
+
+
+
+.careers-third {
+    display: flex;
+    gap: 2rem;
+    border-top: 1px solid #000000;
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+
+
+.careers-third-left {}
+
+.careers-third-left h4 {
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 33px;
+    color: #000000;
+    margin: 0;
+}
+
+.careers-third-right {
+    flex: 1;
+}
+
+.careers-third-right-div {
+    border-bottom: 1px solid #E2E2E2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.8rem;
+    padding-top: 0.8rem;
+}
+
+.careers-third-right div:last-child {
+    border: none;
+}
+
+.careers-third-right-div-left {}
+
+.careers-third-right-div-left h6 {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #000000;
+    margin: 0;
+}
+
+.careers-third-right-div-left span {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 22px;
+    color: #000000;
+    margin: 0;
+}
+
+.careers-third-right-div p {
+    font-weight: 900;
+    font-size: 18px;
+    line-height: 27px;
+    color: #E25845;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+
+.careers-fourth {
+    width: 90%;
+    height: 50px;
+    background: #E2584533;
+    margin: auto;
+    margin-top: 4rem;
+}

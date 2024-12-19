@@ -34,7 +34,7 @@ const Footer = () => {
                                 <h6>Jobs</h6>
                                 <ul>
                                     <li>Post job</li>
-                                    <li>Find a job</li>
+                                    <li onClick={()=>navigate('/jobs')}>Find a job</li>
                                     <li>Browse jobs</li>
                                 </ul>
                             </div>
@@ -42,14 +42,14 @@ const Footer = () => {
                                 <h6>About</h6>
                                 <ul>
                                     <li>Our story</li>
-                                    <li>Careers</li>
-                                    <li>Press</li>
+                                    <li onClick={()=>navigate('/careers')}>Careers</li>
+                                    <li onClick={()=>navigate('/press')}>Press</li>
                                 </ul>
                             </div>
                             <div className="footer-main-links">
                                 <h6>Help</h6>
                                 <ul>
-                                    <li>Help center</li>
+                                    <li onClick={()=>navigate('/help')}>Help center</li>
                                     <li>Community</li>
                                     <li onClick={()=>navigate('/blog')}>Blog</li>
                                 </ul>

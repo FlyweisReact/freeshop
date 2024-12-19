@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import allRoutes from "./Routes/Routes";
 import MainLayout from "./layouts/MainLayout";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
