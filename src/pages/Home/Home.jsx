@@ -1,62 +1,73 @@
-import { useState, useEffect } from 'react';
-import { products } from '../../data/HomeData'; // Adjust the path based on your project structure
+/** @format */
 
-import './Home.css'
-import QRcode from '../../components/CommonComponent/QRcode';
-import SeachByCities from '../../components/CommonComponent/SeachByCities';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import "./Home.css";
+import QRcode from "../../components/CommonComponent/QRcode";
+import SeachByCities from "../../components/CommonComponent/SeachByCities";
+import { Link, useNavigate } from "react-router-dom";
+import { getApi } from "../../Repository/Api";
+import endPoints from "../../Repository/apiConfig";
 
 const Home = () => {
-    const [category, setCategory] = useState(null);
+  const [products, setProducts] = useState(null);
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        // Fetch the category data
-        const fetchCategory = () => {
-            setCategory(products || null);
-        };
+  const fetchProduct = () => {
+    const queryParams = new URLSearchParams({
+      page: 1,
+      limit: 45,
+    });
+    getApi(endPoints.products.getAllProducts(queryParams?.toString()), {
+      setResponse: setProducts,
+    });
+  };
 
-        fetchCategory();
-    }, []);
+  useEffect(() => {
+    fetchProduct();
+  }, []);
 
-    if (!category) {
-        return <h2>No products available for this category.</h2>;
-    }
+  if (!products) {
+    return <h2>No data found</h2>;
+  }
 
-    return (
-        <>
-            <div className="home-container">
-                <div className='home-app'>
-                    <QRcode />
-                </div>
-                <div className="home-products">
-                    {category.products.map((product) => (
-                        <Link
-                            to={`/product`} // Navigate to the product details page with the product ID
-                            key={product.id}
-                            className="link"
-                        >
-                            <div className="productlist-products-div" key={product.id}>
-                                <div className="productlist-products-image">
-                                    <img src={product.image} alt={product.name} />
-                                </div>
-                                <div className="productlist-products-content">
-                                    <h6>{product.name}</h6>
-                                    <span>${product.price}</span>
-                                    <p>{product.location}</p>
-                                </div>
-                            </div>
-                        </Link>
-                    ))}
-                </div>
-                <div className='home-products-button'>
-                    <button>View more</button>
-                </div>
-                <div className='home-city'>
-                    <SeachByCities />
-                </div>
+  return (
+    <>
+      <div className="home-container">
+        <div className="home-app">
+          <QRcode />
+        </div>
+        <div className="home-products">
+          {products?.data?.docs?.map((product) => (
+            <div className="productlist-products-div" key={product.id}>
+              <div className="productlist-products-image">
+                <img
+                  src={product?.productImages?.[0]?.image}
+                  alt={product.name}
+                  onClick={() =>
+                    navigate(`/product/${product?.name}?id=${product?._id}`)
+                  }
+                />
+              </div>
+              <div className="productlist-products-content">
+                <Link to={`/product/${product?.name}?id=${product?._id}`}>
+                  <h6>{product.name}</h6>
+                </Link>
+
+                <span>${product.price}</span>
+                <p>{product.location}</p>
+              </div>
             </div>
-        </>
-    );
+          ))}
+        </div>
+        <div className="home-products-button">
+          <button>View more</button>
+        </div>
+        <div className="home-city">
+          <SeachByCities />
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default Home;

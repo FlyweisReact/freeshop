@@ -1,237 +1,229 @@
+/** @format */
+
 .navbar-container {
-    background-color: #FFFFFF;
-    height: auto;
-    border-bottom: 1px solid #E2E2E2;
+  background-color: #ffffff;
+  height: auto;
+  border-bottom: 1px solid #e2e2e2;
 }
 
 .navbar-top-div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1600px;
-    margin: auto;
-    padding-left: 0.1rem;
-    padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1600px;
+  margin: auto;
+  padding-left: 0.1rem;
+  padding-right: 1rem;
 }
-
-
 
 .navbar-left {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
-
 .navbar-logo {
-    width: 69.37px;
-    height: 68.29px;
-    overflow: hidden;
+  width: 69.37px;
+  height: 68.29px;
+  overflow: hidden;
 }
 
 .navbar-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-
 .navbar-searchbar-container {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .navbar-searchbar-div {
-    width: auto;
-    border-radius: 10000px;
-    border: 1px solid #121212;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.3rem 0.6rem 0.3rem 0.6rem;
+  width: auto;
+  border-radius: 10000px;
+  border: 1px solid #121212;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.6rem 0.3rem 0.6rem;
 }
 
-
 .navbar-searchbar-div input {
-    flex: 1;
-    height: auto;
-    border: none;
-    border-right: 1px solid #E2E2E2;
-    outline: none;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21.6px;
-    color: #121212;
+  flex: 1;
+  height: auto;
+  border: none;
+  border-right: 1px solid #e2e2e2;
+  outline: none;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.6px;
+  color: #121212;
 }
 
 .navbar-searchbar-div input::placeholder {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21.6px;
-    color: #8A8A8A;
-    margin: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.6px;
+  color: #8a8a8a;
+  margin: 0;
 }
 
 .navbar-searchbar-div select {
-    width: 120px;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 28px;
-    text-align: center;
-    color: #121212;
-    border: none;
-    outline: none;
+  width: 120px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  color: #121212;
+  border: none;
+  outline: none;
 }
-
 
 .navbar-searchbar-icon {
-    width: 25px;
-    height: 25px;
-    padding: 8px;
-    border-radius: 50%;
-    background: #E25845;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+  width: 25px;
+  height: 25px;
+  padding: 8px;
+  border-radius: 50%;
+  background: #e25845;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.navbar-location {}
+.navbar-location {
+}
 
 .navbar-location h6 {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 28px;
-    color: #E25845;
-    margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  color: #e25845;
+  margin: 0;
 }
-
-
 
 .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
 
-.navbar-getapp {}
+.navbar-getapp {
+}
 
 .navbar-getapp button {
-    width: 117.16px;
-    height: 44px;
-    padding: 8px 11.08px 8px 12px;
-    border-radius: 24px;
-    outline: none;
-    border: 1px solid #FFFFFF;
-    background: #E25845;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 28px;
-    color: #FFFFFF;
-    margin: 0;
-    cursor: pointer;
+  width: 117.16px;
+  height: 44px;
+  padding: 8px 11.08px 8px 12px;
+  border-radius: 24px;
+  outline: none;
+  border: 1px solid #ffffff;
+  background: #e25845;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  color: #ffffff;
+  margin: 0;
+  cursor: pointer;
 }
 
 .navbar-right-items {
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
 }
 
 .navbar-right-items h6 {
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 24px;
-    color: #121212;
-    margin: 0;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 24px;
+  color: #121212;
+  margin: 0;
 }
 
 .navbar-right-items span {
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 24px;
-    color: #121212;
-    margin: 0;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+  color: #121212;
+  margin: 0;
 }
 
 .navbarlogin {
-    width: auto;
-    height: 24px;
-    padding: 0px 7.19px 0px 8px;
-    border-radius: 3px;
-    background: #E25845;
-    box-shadow: 0px 4px 4px 0px #00000040;
+  width: auto;
+  height: 24px;
+  padding: 0px 7.19px 0px 8px;
+  border-radius: 3px;
+  background: #e25845;
+  box-shadow: 0px 4px 4px 0px #00000040;
 }
 
 .navbarlogin p {
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 24px;
-    color: #FFFFFF;
-    margin: 0;
-    text-align: center;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
 }
 
-
 .navbar-bottom-div {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    height: 72px;
-    max-width: 1600px;
-    margin: auto;
-    padding-left: 0.5rem;
-    padding-right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  height: 72px;
+  max-width: 1600px;
+  margin: auto;
+  padding-left: 0.5rem;
+  padding-right: 1rem;
 }
 
 .navbar-bottom-job {
-    position: relative;
-    width: 100.22px;
+  position: relative;
+  width: 100.22px;
 }
 
 .navbar-bottom-job h6 {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 28px;
-    color: #121212;
-    margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 28px;
+  color: #121212;
+  margin: 0;
 }
 
 .navbar-bottom-job img {
-    position: absolute;
-    top: -8px;
-    right: 0;
+  position: absolute;
+  top: -8px;
+  right: 0;
 }
 
-
 .navbar-bottom-items {
-    flex: 1;
+  flex: 1;
 }
 
 .navbar-bottom-items ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 20px;
+  overflow-y: hidden;
+  padding: 0;
+  margin: 0;
 }
 
-.navbar-bottom-items  li {
-   
+.navbar-bottom-items li a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: #121212;
+  transition: color 0.3s;
+  /* font-family: "Lato"; */
 }
 
-.navbar-bottom-items  li a {
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 24px;
-    color: #121212;
-    transition: color 0.3s;
-}
-
-.navbar-bottom-items  li a:hover {
-    color: #E25845;
+.navbar-bottom-items li a:hover {
+  color: #e25845;
 }

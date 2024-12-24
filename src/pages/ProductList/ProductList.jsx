@@ -1,89 +1,147 @@
-import { Link, useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
+/** @format */
+
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
 import FilterSidebar from "../../components/FilterDropdown/FilterDropdown";
-import { products as productsData } from "../../data/products";
-import './ProductList.css'
+import "./ProductList.css";
 import QRcode from "../../components/CommonComponent/QRcode";
 import TrackRoute from "../../components/CommonComponent/TrackRoute";
-
-
-
+import { getApi } from "../../Repository/Api";
+import endPoints from "../../Repository/apiConfig";
 
 const ProductList = () => {
-    const { categoryName } = useParams();
-    const [category, setCategory] = useState(null);
+  const navigate = useNavigate();
+  const { categoryName } = useParams();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const id = searchParams.get("id");
+  const [response, setResponse] = useState(null);
+  const [subCategories, setSubCategories] = useState(null);
+  const [selectedSubcategoryId, setSelectedSubCategoryId] = useState(null);
+  const [selectedCondition, setSelectedCondition] = useState([]);
+  const [fromPrice, setFromPrice] = useState(0);
+  const [toPrice, setToPrice] = useState(0);
+  const [sort, setSort] = useState(null);
 
-    useEffect(() => {
-        const fetchCategory = () => {
-            const categoryDetails = productsData[categoryName];
-            setCategory(categoryDetails || null);
-        };
-
-        fetchCategory();
-    }, [categoryName]);
-
-    if (!category) {
-        return <h2>No products available for this category.</h2>;
+  const fetchProducts = useCallback(() => {
+    const queryParams = new URLSearchParams({
+      page: 1,
+      limit: 45,
+      categoryId: id,
+    });
+    if (selectedSubcategoryId) {
+      queryParams.append("subCategoryId", selectedSubcategoryId?.value);
     }
-    const handleFilterApply = (filters) => {
-        console.log("Applied Filters:", filters);
-    };
+    if (selectedCondition?.length > 0) {
+      selectedCondition.forEach((condition) => {
+        queryParams.append("conditions", condition);
+      });
+    }
+    if (fromPrice > 0) {
+      queryParams.append("fromPrice", fromPrice);
+    }
+    if (toPrice > 0) {
+      queryParams.append("toPrice", toPrice);
+    }
+    if (sort) {
+      queryParams.append("sort", sort);
+    }
 
-    return (
-        <>
-            <div className="productlist-container">
-                <div className='home-app'>
-                    <QRcode />
-                </div>
-                <div className='home-app-filter'>
-                    <TrackRoute pageName={category.categoryName} />
-                </div>
-                <div className="productlist-container-items">
-                    <div className="productlist-left-filter">
-                        <FilterSidebar
-                            categories={category.categories}
-                            activecategory={category.categoryName}
-                            onApplyFilter={handleFilterApply}
-                        />
-                    </div>
-                    <div className="productlist-right">
-                        <div className="productlist-category">
-                            <h6>{category.categoryName}</h6>
-                        </div>
-                        <div className="productlist-subcategory">
-                            {category.subcategories.map((subcategory, index) => (
-                                <div className="productlist-subcategory-div" key={index}>
-                                    <p>{subcategory}</p>
-                                </div>
-                            ))}
-                        </div>
-                        <div className="productlist-products">
-                            {category.products.map((product) => (
-                                <Link
-                                    to={`/product`} // Navigate to the product details page with the product ID
-                                    key={product.id}
-                                    className="link"
-                                >
-                                    <div className="productlist-products-div">
-                                        <div className="productlist-products-image">
-                                            <img src={product.image} alt={product.name} />
-                                        </div>
-                                        <div className="productlist-products-content">
-                                            <h6>{product.name}</h6>
-                                            <span>${product.price}</span>
-                                            <p>{product.location}</p>
-                                        </div>
-                                    </div>
-                                </Link>
-                            ))}
-                        </div>
+    getApi(endPoints.products.getAllProducts(queryParams?.toString()), {
+      setResponse,
+    });
+  }, [id, selectedSubcategoryId, selectedCondition, fromPrice, toPrice, sort]);
 
-                    </div>
-                </div>
+  useEffect(() => {
+    fetchProducts();
+  }, [fetchProducts]);
+
+  const fetchSubCategories = useCallback(() => {
+    getApi(endPoints.subCategories.getSubCategoryByCatalog(id), {
+      setResponse: setSubCategories,
+    });
+  }, [id]);
+
+  useEffect(() => {
+    fetchSubCategories();
+  }, [fetchSubCategories]);
+
+  const handleSubCategory = (category) => {
+    setSelectedSubCategoryId({
+      value: category?._id,
+      label: category?.name,
+    });
+  };
+
+  return (
+    <>
+      <div className="productlist-container">
+        <div className="home-app">
+          <QRcode />
+        </div>
+        <div className="home-app-filter">
+          <TrackRoute pageName={categoryName} setSort={setSort} sort={sort} />
+        </div>
+        <div className="productlist-container-items">
+          <div className="productlist-left-filter">
+            <FilterSidebar
+              categories={subCategories?.data || []}
+              activecategory={categoryName}
+              handleSubCategory={handleSubCategory}
+              selectedCondition={selectedCondition}
+              setSelectedCondition={setSelectedCondition}
+              setFromPrice={setFromPrice}
+              setToPrice={setToPrice}
+            />
+          </div>
+          <div className="productlist-right">
+            <div className="productlist-category">
+              <h6>{categoryName}</h6>
             </div>
+            <div className="productlist-subcategory">
+              {selectedSubcategoryId && (
+                <div className="productlist-subcategory-div">
+                  <p> {selectedSubcategoryId?.label} </p>
+                </div>
+              )}
+            </div>
+            {(!response?.data?.docs || response.data.docs.length < 1) && (
+              <h4 className="no-data-found">
+                {" "}
+                Sorry, we couldn't find any products for this category. Please
+                try another category or refine your search.
+              </h4>
+            )}
 
-        </>
-    );
+            <div className="productlist-products">
+              {response?.data?.docs?.map((product) => (
+                <div className="productlist-products-div">
+                  <div className="productlist-products-image">
+                    <img
+                      src={product?.productImages?.[0]?.image}
+                      alt={product.name}
+                      onClick={() =>
+                        navigate(`/product/${product?.name}?id=${product?._id}`)
+                      }
+                    />
+                  </div>
+                  <div className="productlist-products-content">
+                    <Link to={`/product/${product?.name}?id=${product?._id}`}>
+                      {" "}
+                      <h6>{product.name}</h6>
+                    </Link>
+
+                    <span>${product.price}</span>
+                    <p>{product.location}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
 };
 
 export default ProductList;

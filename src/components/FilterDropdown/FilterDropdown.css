@@ -1,171 +1,175 @@
-/* Sidebar Container */
+/**
+ * Sidebar Container
+ *
+ * @format
+ */
+
 .filter-sidebar {
-    width: 248px;
-    height: auto;
-    border: 1px solid #0000001F;
-    border-radius: 4px;
-    background-color: #FFFFFF;
-    padding: 1rem;
+  width: 248px;
+  height: auto;
+  border: 1px solid #0000001f;
+  border-radius: 4px;
+  background-color: #ffffff;
+  padding: 1rem;
 }
 
 /* Section Styling */
 .filter-section {
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #E2E2E2;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #e2e2e2;
 }
 
 .filter-section p {
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 20px;
-    color: #121212;
-    margin: 0;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #121212;
+  margin: 0;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
 }
 
 .filter-section h6 {
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 20px;
-    color: #121212;
-    margin: 0;
-    margin-bottom: 0.5rem;
-    cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  color: #121212;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 
 .filter-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-left: 0.5rem;
-    margin-top: 0.2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-left: 0.5rem;
+  margin-top: 0.2rem;
 }
 
 .filter-section ul li {
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 20px;
-    color: #121212;
-    margin: 0;
-    cursor: pointer;
-    margin-bottom: 0.5rem;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #121212;
+  margin: 0;
+  cursor: pointer;
+  margin-bottom: 0.5rem;
 }
 
 .filter-section ul li:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .filter-section-price {
-    margin-top: 1rem;
-    border-bottom: 1px solid #E2E2E2;
-    padding-bottom: 1rem;
+  margin-top: 1rem;
+  border-bottom: 1px solid #e2e2e2;
+  padding-bottom: 1rem;
 }
 
 .filter-section-price h3 {
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 20px;
-    color: #121212;
-    margin: 0;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  color: #121212;
+  margin: 0;
 }
 
 .filter-section-price h2 {
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 24px;
-    color: #121212;
-    margin: 0;
-    margin-top: 0.5rem;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 24px;
+  color: #121212;
+  margin: 0;
+  margin-top: 0.5rem;
 }
-
 
 /* Price Range Input */
 .price-range {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .price-range input {
-    width: 50.03px;
-    height: auto;
-    padding: 10px 9px 11px 9px;
-    border-radius: 8px;
-    border: 1px solid #E2E2E2;
+  border-radius: 2px;
+  width: 70px;
+  font-size: 13px;
+  padding: 4px;
+  border: 1px solid #e2e2e2;
+  outline: none;
 }
 
 .price-range p {
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 24px;
-    color: #121212;
-    margin: 0;
+  font-weight: 400;
+  font-size: 12px;
+  color: #121212;
+  margin: 0;
 }
 
 .price-range button {
-    width: auto;
-    height: auto;
-    padding: 10px;
-    border-radius: 50%;
-    border: 1px solid #E25845;
-    background: #FFFFFF;
-    cursor: pointer;
-    outline: none;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid #e25845;
+  background: #ffffff;
+  cursor: pointer;
+  outline: none;
+  font-size: 12px;
+  transition: 0.3s;
 }
 
 .price-range button:hover {
-    background-color: #E25845;
-    color: #FFFFFF;
+  background-color: #e25845;
+  color: #ffffff;
 }
 
 /* Conditions */
 .filter-section-condition {
-    margin-top: 1rem;
-    padding-bottom: 1rem;
+  margin-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .filter-section-condition h3 {
-    font-weight: 700;
-    font-size: 15px;
-    line-height: 20px;
-    color: #121212;
-    margin: 0;
-    margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 20px;
+  color: #121212;
+  margin: 0;
+  margin-bottom: 1rem;
 }
 
-
-
 .condition-label {
-    display: flex;
-    gap: 0.2rem;
-    margin-bottom: 0.2rem;
+  display: flex;
+  gap: 0.2rem;
+  margin-bottom: 0.2rem;
 }
 
 .condition-label input {
-    width: 15px;
-    height: 15px;
-    border-radius: 4px;
-    border: 1px solid #505050;
+  width: 15px;
+  height: 15px;
+  border-radius: 4px;
+  border: 1px solid #505050;
 }
 
 .condition-label-content {
-    margin-top: 0.2rem;
+  margin-top: 0.2rem;
 }
 
 .condition-label-content h6 {
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 20px;
-    color: #121212;
-    margin: 0;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 20px;
+  color: #121212;
+  margin: 0;
 }
 
 .condition-label-content p {
-    font-weight: 400;
-    font-size: 12.5px;
-    line-height: 20px;
-    color: #505050;
-    margin: 0;
+  font-weight: 400;
+  font-size: 12.5px;
+  line-height: 20px;
+  color: #505050;
+  margin: 0;
 }
