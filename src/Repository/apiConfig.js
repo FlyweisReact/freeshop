@@ -4,6 +4,7 @@ const endPoints = {
   auth: {
     signup: "api/v1/user/registration",
     login: "api/v1/user/login",
+    getProfile: "api/v1/user/getProfile",
   },
   getCategories: "api/v1/admin/Category/allCategory",
   products: {
@@ -15,12 +16,22 @@ const endPoints = {
     editPost: (id) => `api/v1/user/updateProduct/${id}`,
   },
   subCategories: {
-  getSubCategoryByCatalog: (id) =>
+    getSubCategoryByCatalog: (id) =>
       `api/v1/SubCategory/allSubcategoryById/${id}`,
   },
   getAllConditions: "api/v1/admin/Condition/allCondition",
   getAllBrands: "api/v1/admin/Brand/allBrand",
   getAllModels: "api/v1/admin/Model/allModel",
+  getLocation: ({ lat, long }) =>
+    `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${long}`,
+  blogs: {
+    getAll: (query = "") => `api/v1/admin/allBlog?${query}`,
+  },
+  getHelpCenter: "api/v1/admin/HelpCenter/allCategory",
+  getArticle: (query = "") => `api/v1/admin/Article/getArticle?${query}`,
+  getJobs: (query = "") => `api/v1/user/allJobs?${query}`,
+  getServiceCategory: "api/v1/admin/ServiceCategory/allServiceCategory",
+  getJobDetail: (id) => `api/v1/user/getJobs/${id}`,
 };
 
 export default endPoints;

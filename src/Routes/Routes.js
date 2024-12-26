@@ -85,7 +85,7 @@ const allRoutes = [
     component: FindJobs,
   },
   {
-    route: "/jobs/details",
+    route: "/jobs/:id",
     component: JobDetails,
   },
   {

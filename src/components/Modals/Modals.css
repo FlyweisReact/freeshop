@@ -1,306 +1,488 @@
+/** @format */
+
 .login-container-modal {
-    padding: 0.8rem;
+  padding: 0.8rem;
 }
 
 .login-modal-top {
-    position: relative;
+  position: relative;
 }
 
 .login-modal-top h6 {
-    font-weight: 900;
-    font-size: 36px;
-    line-height: 24.6px;
-    color: #000000;
-    margin: 0;
-    text-align: center;
+  font-weight: 900;
+  font-size: 36px;
+  line-height: 24.6px;
+  color: #000000;
+  margin: 0;
+  text-align: center;
 }
 
 .login-modal-top p {
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24.6px;
-    color: #000000;
-    margin: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    cursor: pointer;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24.6px;
+  color: #000000;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
 }
 
 .login-modal-top svg {
-    font-size: 28px;
-    color: #000000;
-    margin: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    cursor: pointer;
+  font-size: 28px;
+  color: #000000;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: pointer;
 }
 
-
 .login-modal-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .login-modal-image {
-    width: 115px;
-    height: 114px;
-    overflow: hidden;
+  width: 115px;
+  height: 114px;
+  overflow: hidden;
 }
 
 .login-modal-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-
 .login-modal-face {
-    width: 100%;
-    height: 56px;
-    border-radius: 100px;
-    background: #156AD9;
-    cursor: pointer;
-    position: relative;
+  width: 100%;
+  height: 56px;
+  border-radius: 100px;
+  background: #156ad9;
+  cursor: pointer;
+  position: relative;
 }
 
 .login-modal-face p {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24.6px;
-    color: #FFFFFF;
-    margin: 0;
-    text-align: center;
-    padding-top: 1rem;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24.6px;
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .login-modal-face svg {
-    font-size: 30px;
-    color: #FFFFFF;
-    position: absolute;
-    left: 20px;
-    top: 15px;
+  font-size: 30px;
+  color: #ffffff;
+  position: absolute;
+  left: 20px;
+  top: 15px;
 }
 
 .login-modal-google {
-    width: 100%;
-    height: 56px;
-    border-radius: 100px;
-    background: #4C8BF5;
-    position: relative;
-    cursor: pointer;
+  width: 100%;
+  height: 56px;
+  border-radius: 100px;
+  background: #4c8bf5;
+  position: relative;
+  cursor: pointer;
 }
 
 .login-modal-google p {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24.6px;
-    color: #FFFFFF;
-    margin: 0;
-    text-align: center;
-    padding-top: 1rem;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24.6px;
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .login-modal-google svg {
-    font-size: 30px;
-    color: #FFFFFF;
-    background-color: #FFFFFF;
-    border-radius: 50%;
-    position: absolute;
-    left: 20px;
-    top: 15px;
+  font-size: 30px;
+  color: #ffffff;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: absolute;
+  left: 20px;
+  top: 15px;
 }
 
 .login-modal-apple {
-    width: 100%;
-    height: 56px;
-    border-radius: 100px;
-    background: transparent;
-    border: 2px solid #000000;
-    position: relative;
-    cursor: pointer;
+  width: 100%;
+  height: 56px;
+  border-radius: 100px;
+  background: transparent;
+  border: 2px solid #000000;
+  position: relative;
+  cursor: pointer;
 }
 
 .login-modal-apple p {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24.6px;
-    color: #000000;
-    margin: 0;
-    text-align: center;
-    padding-top: 1rem;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24.6px;
+  color: #000000;
+  margin: 0;
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .login-modal-apple svg {
-    font-size: 30px;
-    color: #000000;
-    position: absolute;
-    left: 20px;
-    top: 15px;
+  font-size: 30px;
+  color: #000000;
+  position: absolute;
+  left: 20px;
+  top: 15px;
 }
 
 .login-modal-email {
-    width: 100%;
-    height: 56px;
-    border-radius: 100px;
-    background: transparent;
-    border: 2px solid #E25845;
-    position: relative;
-    cursor: pointer;
+  width: 100%;
+  height: 56px;
+  border-radius: 100px;
+  background: transparent;
+  border: 2px solid #e25845;
+  position: relative;
+  cursor: pointer;
 }
 
 .login-modal-email p {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24.6px;
-    color: #E25845;
-    margin: 0;
-    text-align: center;
-    padding-top: 1rem;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24.6px;
+  color: #e25845;
+  margin: 0;
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .login-modal-email svg {
-    font-size: 30px;
-    color: #E25845;
-    position: absolute;
-    left: 20px;
-    top: 15px;
+  font-size: 30px;
+  color: #e25845;
+  position: absolute;
+  left: 20px;
+  top: 15px;
 }
 
 .login-modal-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .login-modal-content p {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 24.6px;
-    color: #585858;
-    margin: 0;
-    text-align: center;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24.6px;
+  color: #585858;
+  margin: 0;
+  text-align: center;
 }
 
-
 .login-modal-sinup-btn {
-    width: 100%;
-    height: 56px;
-    border-radius: 100px;
-    background: #E25845;
-    cursor: pointer;
+  width: 100%;
+  height: 56px;
+  border-radius: 100px;
+  background: #e25845;
+  cursor: pointer;
 }
 
 .login-modal-sinup-btn p {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24.6px;
-    color: #FFFFFF;
-    margin: 0;
-    text-align: center;
-    padding-top: 1rem;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24.6px;
+  color: #ffffff;
+  margin: 0;
+  text-align: center;
+  padding-top: 1rem;
 }
 
-
 .login-modal-login-btn {
-    width: 100%;
-    height: 56px;
-    border-radius: 100px;
-    border: 2px solid #E25845;
-    cursor: pointer;
+  width: 100%;
+  height: 56px;
+  border-radius: 100px;
+  border: 2px solid #e25845;
+  cursor: pointer;
 }
 
 .login-modal-login-btn p {
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24.6px;
-    color: #E25845;
-    margin: 0;
-    text-align: center;
-    padding-top: 1rem;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24.6px;
+  color: #e25845;
+  margin: 0;
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .login-modal-inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .login-modal-input {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .login-modal-input label {
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 24.6px;
-    color: #000000;
-    margin: 0;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 24.6px;
+  color: #000000;
+  margin: 0;
 }
 
 .login-modal-input-in {
-    width: 100%;
-    height: 56px;
-    border-radius: 10px;
-    border: 2px solid #E25845;
-    display: flex;
-    align-items: center;
-    padding-left: 1rem;
-    padding-right: 1rem;
+  width: 100%;
+  height: 56px;
+  border-radius: 10px;
+  border: 2px solid #e25845;
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .login-modal-input-in span {
-    font-weight: 900;
-    font-size: 20px;
-    line-height: 24.6px;
-    color: #000000;
-    margin: 0;
-    border-bottom: 1px solid #000000;
-    cursor: pointer;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 24.6px;
+  color: #000000;
+  margin: 0;
+  border-bottom: 1px solid #000000;
+  cursor: pointer;
 }
 
 .login-modal-input-in input {
-    flex: 1;
-    outline: none;
-    border: none;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 24.6px;
-    color: #000000;
-    margin: 0;
+  flex: 1;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24.6px;
+  color: #000000;
+  margin: 0;
 }
 
 .login-modal-login-btn {
-
 }
 
 .login-modal-button button {
-    width: 100%;
-    height: 46px;
-    border-radius: 100px;
-    background: #E25845;
-    outline: none;
-    border: none;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 24.6px;
-    color: #FFFFFF;
-    margin: 0;
+  width: 100%;
+  height: 46px;
+  border-radius: 100px;
+  background: #e25845;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24.6px;
+  color: #ffffff;
+  margin: 0;
 }
 
-.login-modal-button p{
-    font-weight: 900;
-    font-size: 22px;
-    line-height: 24.6px;
-    color: #E25845;
-    margin: 0;
-    text-align: center;
-    margin-top: 1rem;
-    cursor: pointer;
+.login-modal-button button:disabled {
+  background-color: #c7c7c7;
+  cursor: not-allowed;
+}
+
+.login-modal-button p {
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 24.6px;
+  color: #e25845;
+  margin: 0;
+  text-align: center;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.locationget-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.location-img {
+}
+
+.locationget-modal h3 {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 20px;
+  letter-spacing: -0.5px;
+  color: #1e1e1e;
+  margin: 0;
+  margin-top: 0.5rem;
+}
+
+.locationget-modal span {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #000000;
+  margin: 0;
+}
+
+.locationget-modal input {
+  width: 70%;
+  height: 45px;
+  border-radius: 10px;
+  background: #c2c2c247;
+  outline: none;
+  border: none;
+  text-align: center;
+}
+
+.locationget-modal input::placeholder {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  color: #8d8d8d;
+  margin: 0;
+}
+
+.location-btn-modal {
+  width: auto;
+  height: auto;
+  padding: 14px 94px 14px 94px;
+  border-radius: 10px;
+  border: 1px solid #e25845;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.location-btn-modal p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  color: #e25845;
+  margin: 0;
+}
+
+.location-btn-modal svg {
+  font-size: 16px;
+  color: #e25845;
+}
+
+.category-container-modal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category-modal-div {
+  padding: 10px;
+  border-radius: 100px;
+  border: 1px solid #aaaaaa;
+  cursor: pointer;
+}
+
+.category-modal-div.selected {
+  background-color: #f04e31;
+  color: white;
+  border: 1px solid #f04e31;
+}
+
+.category-modal-div.selected p {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.category-modal-div p {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: #a0a0a0;
+  margin: 0;
+}
+
+.delete-modal {
+}
+
+.delete-modal h6 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 52px;
+  text-align: center;
+  color: #000000e5;
+  margin: 0;
+}
+
+.delete-modal-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.delete-modal-btns button:first-child {
+  width: 104px;
+  height: 50px;
+  border-radius: 44px;
+  border: none;
+  outline: none;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #ffffff;
+  margin: 0;
+  background: #e25845;
+}
+
+.delete-modal-btns button:last-child {
+  width: 104px;
+  height: 50px;
+  border-radius: 44px;
+  border: 1px solid #e25845;
+  outline: none;
+  font-weight: 500;
+  font-size: 20px;
+  text-align: center;
+  color: #e25845;
+  margin: 0;
+  background: transparent;
+}
+
+.delete-modal-final {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete-modal-final p {
+  font-weight: 500;
+  font-size: 30px;
+  text-align: center;
+  color: #000000b2;
+  margin: 0;
+}
+
+.delete-modal-gif {
+  width: 126px;
+  height: 119px;
+  overflow: hidden;
+}
+
+.delete-modal-gif img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }

@@ -19,9 +19,14 @@ import { getApi } from "../../Repository/Api";
 import endPoints from "../../Repository/apiConfig";
 import { useSelector, useDispatch } from "react-redux";
 import { isAuthenticated, LOGOUT } from "../../store/authSlice.js";
+import notification_img from "../../assets/images/notification.png";
+
+const default_user_avatar =
+  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMg_4QMb_SkaPs0XXddwSldTXcgQCi2tdk0w&s";
 
 const Header = () => {
   const [categories, setCategories] = useState(null);
+  const [profile, setProfile] = useState(null);
   const navigate = useNavigate();
   const [show, setShow] = useState(false);
   const [show1, setShow1] = useState(false);
@@ -29,6 +34,20 @@ const Header = () => {
   const [show3, setShow3] = useState(false);
   const isLoggedIn = useSelector(isAuthenticated);
   const dispatch = useDispatch();
+
+  const fetchProfile = () => {
+    getApi(endPoints.auth.getProfile, {
+      setResponse: setProfile,
+    });
+  };
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      fetchProfile();
+    }
+  }, [isLoggedIn]);
+
+  console.log(profile?.data?.image);
 
   const fetchCategories = () => {
     getApi(endPoints.getCategories, {
@@ -122,6 +141,26 @@ const Header = () => {
               <span onClick={() => navigate("/chat")}>Chat</span>
               <span onClick={() => navigate("/post")}>Post</span>
               <span onClick={() => navigate("/mylisting")}>My Listing</span>
+
+              {isLoggedIn && (
+                <img
+                  src={
+                    profile?.data?.image
+                      ? profile?.data?.image
+                      : default_user_avatar
+                  }
+                  alt="user_avatar"
+                  className="user_avatar"
+                />
+              )}
+
+              {isLoggedIn && (
+                <img
+                  src={notification_img}
+                  alt=""
+                  className="notification_icon"
+                />
+              )}
 
               {isLoggedIn ? (
                 <div className="navbarlogin" onClick={() => logoutHandler()}>
