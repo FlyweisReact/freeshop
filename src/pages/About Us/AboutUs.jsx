@@ -1,216 +1,115 @@
-import './AboutUs.css'
-import img from '../../assets/images/aboutus.jpg'
-import img1 from '../../assets/images/img3.jpg'
-import img2 from '../../assets/images/img4.jpg'
-import img3 from '../../assets/images/img20.jpg'
-import img4 from '../../assets/images/img21.jpg'
-import img5 from '../../assets/images/img22.jpg'
-import img6 from '../../assets/images/img23.jpg'
-import img7 from '../../assets/images/img24.jpg'
-import img8 from '../../assets/images/img25.jpg'
-import img9 from '../../assets/images/img26.jpg'
+/** @format */
 
-
+import "./AboutUs.css";
+import img from "../../assets/images/aboutus.jpg";
+import img1 from "../../assets/images/img3.jpg";
+import img2 from "../../assets/images/img4.jpg";
+import img3 from "../../assets/images/img20.jpg";
+import img4 from "../../assets/images/img21.jpg";
+import img5 from "../../assets/images/img22.jpg";
+import img6 from "../../assets/images/img23.jpg";
+import img7 from "../../assets/images/img24.jpg";
+import img8 from "../../assets/images/img25.jpg";
+import img9 from "../../assets/images/img26.jpg";
+import { useEffect, useState } from "react";
+import { getApi } from "../../Repository/Api";
+import endPoints from "../../Repository/apiConfig";
 
 const AboutUs = () => {
-    return (
-        <>
-            <div className='about-us-container'>
-                <div className="about-us-top">
-                    <div className="overlay-text">
-                        <h1>About Us</h1>
-                    </div>
-                    <img src={img} alt="Family" className="background-image" />
-                </div>
-                <div className='about-us-second'>
-                    <h5>We help people and businesses of all kinds come<br />
-                        together to get more of what they need closer to home</h5>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </div>
-                <div className='about-us-third'>
-                    <div className='about-us-third-div'>
-                        <h6>150+</h6>
-                        <p>Million Downloads</p>
-                    </div>
-                    <div className='about-us-third-div'>
-                        <h6>Top 10</h6>
-                        <p>Shopping app</p>
-                    </div>
-                    <div className='about-us-third-div'>
-                        <h6>30M</h6>
-                        <p>Annual transactions</p>
-                    </div>
-                </div>
-                <div className='about-us-fourth'>
-                    <h6>See what's new on Freeshopps</h6>
-                    <div className='about-us-fourth-main'>
-                        <div className='about-us-fourth-div'>
-                            <div className='about-us-fourth-div-top'>
-                                <h5>Recent Posts</h5>
-                                <p>The latest from Freeshopps</p>
-                                <div className='about-us-fourth-div-top-line'>
+  const [response, setResponse] = useState(null);
+  const [item, setItem] = useState(null);
+  const [blogs, setBlogs] = useState(null);
 
-                                </div>
-                            </div>
-                            <div className='about-us-fourth-div-posts'>
-                                <div className='about-us-fourth-div-post'>
-                                    <div className='about-us-fourth-div-post-img'>
-                                        <img src={img1} alt="" />
-                                    </div>
-                                    <div className='about-us-fourth-div-post-content'>
-                                        <h4>A Letter From Our CEO: A
-                                            Profitable Year and Our Path
-                                            Forward</h4>
-                                    </div>
-                                </div>
-                                <div className='about-us-fourth-div-post'>
-                                    <div className='about-us-fourth-div-post-img'>
-                                        <img src={img3} alt="" />
-                                    </div>
-                                    <div className='about-us-fourth-div-post-content'>
-                                        <h4>Freeshopps Recommerce Report
-                                            2023</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='about-us-fourth-div'>
-                            <div className='about-us-fourth-div-top'>
-                                <h5>Parenting Hub</h5>
-                                <p>Tips and resources for parents</p>
-                                <div className='about-us-fourth-div-top-line'>
+  const fetchHandler = () => {
+    getApi(endPoints.how_It_Works, {
+      setResponse,
+    });
+    getApi(endPoints.aboutUs.blogs, {
+      setResponse: setBlogs,
+    });
+  };
 
-                                </div>
-                            </div>
-                            <div className='about-us-fourth-div-posts'>
-                                <div className='about-us-fourth-div-post'>
-                                    <div className='about-us-fourth-div-post-img'>
-                                        <img src={img9} alt="" />
-                                    </div>
-                                    <div className='about-us-fourth-div-post-content'>
-                                        <h4>Smart Shopping Tips for
-                                            Secondhand School Supplies</h4>
-                                    </div>
-                                </div>
-                                <div className='about-us-fourth-div-post'>
-                                    <div className='about-us-fourth-div-post-img'>
-                                        <img src={img8} alt="" />
-                                    </div>
-                                    <div className='about-us-fourth-div-post-content'>
-                                        <h4>First-Time Parenting: Navigating
-                                            New Challenges and Finding
-                                            Quality Baby Products at
-                                            Reduced Prices on Secondhand
-                                            Marketplaces</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='about-us-fourth-div'>
-                            <div className='about-us-fourth-div-top'>
-                                <h5>Freeshopps for Business</h5>
-                                <p>Insights to power your growth</p>
-                                <div className='about-us-fourth-div-top-line'>
+  useEffect(() => {
+    fetchHandler();
+  }, []);
 
-                                </div>
-                            </div>
-                            <div className='about-us-fourth-div-posts'>
-                                <div className='about-us-fourth-div-post'>
-                                    <div className='about-us-fourth-div-post-img'>
-                                        <img src={img7} alt="" />
-                                    </div>
-                                    <div className='about-us-fourth-div-post-content'>
-                                        <h4>Freeshopps announces new
-                                            partnership with AI-Agent
-                                            platform SonicJobs</h4>
-                                    </div>
-                                </div>
-                                <div className='about-us-fourth-div-post'>
-                                    <div className='about-us-fourth-div-post-img'>
-                                        <img src={img6} alt="" />
-                                    </div>
-                                    <div className='about-us-fourth-div-post-content'>
-                                        <h4>Announcing the 2023 Freeshopps
-                                            100 Top Dealers - the first-ever
-                                            dealer awards program for
-                                            OfferUp's top dealerships</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className='about-us-fourth-div'>
-                            <div className='about-us-fourth-div-top'>
-                                <h5>Trust & Safety</h5>
-                                <p>A community built on trust</p>
-                                <div className='about-us-fourth-div-top-line'>
+  useEffect(() => {
+    if (response) {
+      setItem(response?.data?.[0]);
+    }
+  }, [response]);
 
-                                </div>
-                            </div>
-                            <div className='about-us-fourth-div-posts'>
-                                <div className='about-us-fourth-div-post'>
-                                    <div className='about-us-fourth-div-post-img'>
-                                        <img src={img4} alt="" />
-                                    </div>
-                                    <div className='about-us-fourth-div-post-content'>
-                                        <h4>Staying Safe on Freeshopps  — The
-                                            Dos and Don'ts of Online
-                                            Marketplace Transactions</h4>
-                                    </div>
-                                </div>
-                                <div className='about-us-fourth-div-post'>
-                                    <div className='about-us-fourth-div-post-img'>
-                                        <img src={img5} alt="" />
-                                    </div>
-                                    <div className='about-us-fourth-div-post-content'>
-                                        <h4>Our Trust & Safety Commitment</h4>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+  console.log(blogs?.data);
 
-                    </div>
-                </div>
-                <div className='about-us-fivth'>
-                    <h1>OfferUp is where local communities shop, connect, and
-                        prosper</h1>
-                    <span>Read a letter from our CEO → </span>
-                </div>
-                <div className='about-us-sixth-div'>
-                    <div className='about-us-sixth-div-left'>
-                        <div className='about-us-sixth-left-div'>
-                            <h6>Find amazing local deals</h6>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
-                            <span>Learn more →</span>
-                        </div>
-                        <div className='about-us-sixth-left-div'>
-                            <h6>Post items for sale easily</h6>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
-                            <span>Learn more →</span>
-                        </div>
-                        <div className='about-us-sixth-left-div'>
-                            <h6>Connect with people securely</h6>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
-                            <span>Learn more →</span>
-                        </div>
-                        <div className='about-us-sixth-left-div'>
-                            <h6>Build your business</h6>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
-                            <span>Learn more →</span>
-                        </div>
-                        <div className='about-us-sixth-left-div'>
-                            <h6>Find your next job</h6>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
-                            <span>Learn more →</span>
-                        </div>
-                    </div>
-                    <div className='about-us-sixth-div-right'>
-                        <img src={img2} alt="" />
-                    </div>
-                </div>
+  return (
+    <>
+      <div className="about-us-container">
+        <div className="about-us-top">
+          <img src={item?.image} alt="Family" className="background-image" />
+        </div>
+        <div className="about-us-second">
+          <h5>{item?.title}</h5>
+          <p>{item?.description}</p>
+        </div>
+        <div className="about-us-third">
+          {item?.counts?.map((item, index) => (
+            <div className="about-us-third-div" key={`counts${index}`}>
+              <h6> {item?.description} </h6>
+              <p> {item?.name} </p>
             </div>
+          ))}
+        </div>
 
-        </>
-    )
-}
+        {blogs?.data?.length > 0 && (
+          <div className="about-us-fourth">
+            <h6>See what's new on Freeshopps</h6>
+            <div className="about-us-fourth-main">
+              {blogs?.data?.map((list, index) => (
+                <div className="about-us-fourth-div" key={`freeshop${index}`}>
+                  <div className="about-us-fourth-div-top">
+                    <h5> {list?.category?.title} </h5>
+                    <p> {list?.category?.description} </p>
+                    <div className="about-us-fourth-div-top-line"></div>
+                  </div>
+                  <div className="about-us-fourth-div-posts">
+                    {list?.freeShopNews?.map((data) => (
+                      <div className="about-us-fourth-div-post" key={data?._id}>
+                        <div className="about-us-fourth-div-post-img">
+                          <img src={data?.image} alt="" />
+                        </div>
+                        <div className="about-us-fourth-div-post-content">
+                          <h4>{data?.title}</h4>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
-export default AboutUs
+        <div className="about-us-fivth">
+          <h1> {item?.ceoLetterTitle} </h1>
+          <span> {item?.ceoLetter} </span>
+        </div>
+        <div className="about-us-sixth-div">
+          <div className="about-us-sixth-div-left">
+            {item?.bottomData?.map((item, index) => (
+              <div className="about-us-sixth-left-div" key={`item${index}`}>
+                <h6> {item?.name} </h6>
+                <p>{item?.description}</p>
+                <span>Learn more →</span>
+              </div>
+            ))}
+          </div>
+          <div className="about-us-sixth-div-right">
+            <img src={item?.bottomDataImage} alt="" />
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default AboutUs;

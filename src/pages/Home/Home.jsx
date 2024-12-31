@@ -1,6 +1,6 @@
 /** @format */
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import "./Home.css";
 import QRcode from "../../components/CommonComponent/QRcode";
 import SeachByCities from "../../components/CommonComponent/SeachByCities";
@@ -10,21 +10,22 @@ import endPoints from "../../Repository/apiConfig";
 
 const Home = () => {
   const [products, setProducts] = useState(null);
+  const [limit, setLimit] = useState(45);
   const navigate = useNavigate();
 
-  const fetchProduct = () => {
+  const fetchProduct = useCallback(() => {
     const queryParams = new URLSearchParams({
       page: 1,
-      limit: 45,
+      limit,
     });
     getApi(endPoints.products.getAllProducts(queryParams?.toString()), {
       setResponse: setProducts,
     });
-  };
+  }, [limit]);
 
   useEffect(() => {
     fetchProduct();
-  }, []);
+  }, [fetchProduct]);
 
   if (!products) {
     return <h2>No data found</h2>;
@@ -59,9 +60,13 @@ const Home = () => {
             </div>
           ))}
         </div>
-        <div className="home-products-button">
-          <button>View more</button>
-        </div>
+        {products?.data?.hasNextPage && (
+          <div className="home-products-button">
+            <button type="button" onClick={() => setLimit(limit + 10)}>
+              View more
+            </button>
+          </div>
+        )}
         <div className="home-city">
           <SeachByCities />
         </div>

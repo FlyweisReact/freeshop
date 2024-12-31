@@ -32,6 +32,21 @@ const endPoints = {
   getJobs: (query = "") => `api/v1/user/allJobs?${query}`,
   getServiceCategory: "api/v1/admin/ServiceCategory/allServiceCategory",
   getJobDetail: (id) => `api/v1/user/getJobs/${id}`,
+  career: {
+    getBanner: "api/v1/admin/Career/allCareer",
+    getOpenings: "api/v1/admin/allCareerOpeningForWebsite",
+  },
+  trust_safety: "api/v1/admin/TrustAndSafety/allTrustAndSafety",
+  how_It_Works: "api/v1/admin/HowItsWork/allHowItsWork",
+  aboutUs: {
+    blogs: "api/v1/admin/allFreeShopNewsForWebsite",
+  },
+  press: {
+    contactDetails: "api/v1/admin/Press/allPress",
+    pressTopic: "api/v1/admin/allPressTopic",
+    news: "api/v1/admin/allPressNewsForWebsite",
+    offerupNews : "api/v1/admin/allPressOfferUpNews"
+  },
 };
 
 export default endPoints;

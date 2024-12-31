@@ -7,12 +7,13 @@ import img1 from "../../assets/images/Vector.png";
 import { IoSearch } from "react-icons/io5";
 import { IoLocationSharp } from "react-icons/io5";
 import { FaTruck } from "react-icons/fa6";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   LoginModalfirst,
   LoginModallogin,
   LoginModalSecond,
   LoginModalsignup,
+  SidebarCanvas,
 } from "../Modals/Modals";
 import { useEffect, useState } from "react";
 import { getApi } from "../../Repository/Api";
@@ -20,6 +21,7 @@ import endPoints from "../../Repository/apiConfig";
 import { useSelector, useDispatch } from "react-redux";
 import { isAuthenticated, LOGOUT } from "../../store/authSlice.js";
 import notification_img from "../../assets/images/notification.png";
+import { FaBarsStaggered } from "react-icons/fa6";
 
 const default_user_avatar =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMg_4QMb_SkaPs0XXddwSldTXcgQCi2tdk0w&s";
@@ -34,6 +36,8 @@ const Header = () => {
   const [show3, setShow3] = useState(false);
   const isLoggedIn = useSelector(isAuthenticated);
   const dispatch = useDispatch();
+  const location = useLocation();
+  const [openCanvas, setOpenCanvas] = useState(false);
 
   const fetchProfile = () => {
     getApi(endPoints.auth.getProfile, {
@@ -46,8 +50,6 @@ const Header = () => {
       fetchProfile();
     }
   }, [isLoggedIn]);
-
-  console.log(profile?.data?.image);
 
   const fetchCategories = () => {
     getApi(endPoints.getCategories, {
@@ -84,6 +86,10 @@ const Header = () => {
 
   return (
     <>
+      <SidebarCanvas
+        show={openCanvas}
+        handleClose={() => setOpenCanvas(false)}
+      />
       <LoginModalfirst
         show={show}
         onHide={() => setShow(false)}
@@ -124,23 +130,35 @@ const Header = () => {
                 </div>
               </div>
               <div className="navbar-location">
-                <h6>
-                  <IoLocationSharp />
-                  Nearby + Shipping
-                  <FaTruck />
-                </h6>
+                <span>
+                  {" "}
+                  <IoLocationSharp /> Nearby + Shipping <FaTruck />{" "}
+                </span>
               </div>
             </div>
           </div>
+
           <div className="navbar-right">
             <div className="navbar-getapp">
               <button>Get the app</button>
             </div>
             <div className="navbar-right-items">
-              <h6 onClick={() => navigate("/")}>Home</h6>
-              <span onClick={() => navigate("/chat")}>Chat</span>
-              <span onClick={() => navigate("/post")}>Post</span>
-              <span onClick={() => navigate("/mylisting")}>My Listing</span>
+              <ul className="links">
+                <li className={location.pathname === "/" ? "active" : ""}>
+                  <Link to={"/"}>Home</Link>
+                </li>
+                <li className={location.pathname === "/chat" ? "active" : ""}>
+                  <Link to={"/chat"}>Chat</Link>
+                </li>
+                <li className={location.pathname === "/post" ? "active" : ""}>
+                  <Link to={"/post"}>Post</Link>
+                </li>
+                <li
+                  className={location.pathname === "/mylisting" ? "active" : ""}
+                >
+                  <Link to={"/mylisting"}>My Listing</Link>
+                </li>
+              </ul>
 
               {isLoggedIn && (
                 <img
@@ -171,9 +189,14 @@ const Header = () => {
                   <p>Log in</p>
                 </div>
               )}
+
+              <div className="ham_menu">
+                <FaBarsStaggered onClick={() => setOpenCanvas(true)} />
+              </div>
             </div>
           </div>
         </div>
+
         <div className="navbar-bottom-div">
           <div className="navbar-bottom-job">
             <h6>Find a Job</h6>

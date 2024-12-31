@@ -1,6 +1,7 @@
 /** @format */
 
 import Modal from "react-bootstrap/Modal";
+import Offcanvas from "react-bootstrap/Offcanvas";
 import "./Modals.css";
 import { FaFacebook } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -11,15 +12,77 @@ import { useEffect, useState } from "react";
 import { getApi, postApi, postApiWithRedux } from "../../Repository/Api";
 import endPoints from "../../Repository/apiConfig";
 import { ClipLoader } from "react-spinners";
-import { useDispatch } from "react-redux";
-import { LOGIN } from "../../store/authSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { isAuthenticated, LOGIN } from "../../store/authSlice";
 import img from "../../assets/images/logo.png";
 import img1 from "../../assets/images/locations.png";
 import img2 from "../../assets/images/dashboard.png";
 import img3 from "../../assets/images/successgif.gif";
 import img4 from "../../assets/images/jobs.png";
-import { IoLocationSharp } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
+import { IoLocationSharp, IoSearch } from "react-icons/io5";
+import { useLocation, useNavigate } from "react-router-dom";
+import { IoClose } from "react-icons/io5";
+import { FaTruck } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+
+const SidebarCanvas = ({ show, handleClose }) => {
+  const location = useLocation();
+  const isLoggedIn = useSelector(isAuthenticated);
+  return (
+    <Offcanvas show={show} onHide={handleClose}>
+      <section className="sidebar-canvas">
+        <div className="close_btn">
+          <IoClose onClick={() => handleClose()} />
+        </div>
+
+        <div className="remaining_content">
+          <div className="search_container">
+            <div className="free_shipping">
+              <span>
+                <IoLocationSharp /> Nearby + Shipping <FaTruck />
+              </span>
+            </div>
+            <div className="search_bar">
+              <input type="text" placeholder="Search for sale" />
+              <select>
+                <option>For Sale</option>
+                <option>For Sale</option>
+              </select>
+              <div className="search_icon">
+                <IoSearch />
+              </div>
+            </div>
+          </div>
+
+          <div className="social_links">
+            <ul>
+              <li className={location.pathname === "/" ? "active" : ""}>
+                <Link to={"/"}>Home</Link>
+              </li>
+              <li className={location.pathname === "/chat" ? "active" : ""}>
+                <Link to={"/chat"}>Chat</Link>
+              </li>
+              <li className={location.pathname === "/post" ? "active" : ""}>
+                <Link to={"/post"}>Post</Link>
+              </li>
+              <li
+                className={location.pathname === "/mylisting" ? "active" : ""}
+              >
+                <Link to={"/mylisting"}>My Listing</Link>
+              </li>
+            </ul>
+
+            {isLoggedIn ? (
+              <button className="login_btn">Log out</button>
+            ) : (
+              <button className="login_btn">Log In</button>
+            )}
+          </div>
+        </div>
+      </section>
+    </Offcanvas>
+  );
+};
 
 const LoginModalfirst = (props) => {
   return (
@@ -552,54 +615,6 @@ const JObsmodal = (props) => {
   );
 };
 
-const DeleteModal = (props) => {
-  return (
-    <Modal
-      {...props}
-      size="sl"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Body>
-        <div className="login-container-modal">
-          <div className="delete-modal">
-            <h6>
-              Are You Sure Want to
-              <br /> Delete Ad
-            </h6>
-            <div className="delete-modal-btns">
-              <button onClick={props.shownext}>Yes</button>
-              <button>No</button>
-            </div>
-          </div>
-        </div>
-      </Modal.Body>
-    </Modal>
-  );
-};
-
-const Deletesuccessmodal = (props) => {
-  return (
-    <Modal
-      {...props}
-      size="sl"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Body>
-        <div className="login-container-modal">
-          <div className="delete-modal-final">
-            <div className="delete-modal-gif">
-              <img src={img3} alt="" />
-            </div>
-            <p>{props.text}</p>
-          </div>
-        </div>
-      </Modal.Body>
-    </Modal>
-  );
-};
-
 export {
   LoginModalfirst,
   LoginModalSecond,
@@ -607,4 +622,5 @@ export {
   LoginModalsignup,
   DefaultModal,
   JObsmodal,
+  SidebarCanvas,
 };
