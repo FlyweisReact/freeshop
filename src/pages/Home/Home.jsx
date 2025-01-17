@@ -1,12 +1,12 @@
 /** @format */
 
 import { useState, useEffect, useCallback } from "react";
-import "./Home.css";
 import QRcode from "../../components/CommonComponent/QRcode";
 import SeachByCities from "../../components/CommonComponent/SeachByCities";
 import { Link, useNavigate } from "react-router-dom";
 import { getApi } from "../../Repository/Api";
 import endPoints from "../../Repository/apiConfig";
+import styles from "../../css/home.module.css";
 
 const Home = () => {
   const [products, setProducts] = useState(null);
@@ -33,14 +33,13 @@ const Home = () => {
 
   return (
     <>
-      <div className="home-container">
-        <div className="home-app">
-          <QRcode />
-        </div>
-        <div className="home-products">
+      <div>
+        <QRcode />
+
+        <div className={styles.product_container}>
           {products?.data?.docs?.map((product) => (
-            <div className="productlist-products-div" key={product.id}>
-              <div className="productlist-products-image">
+            <div className={styles.product} key={product.id}>
+              <div className={styles.thumbnail}>
                 <img
                   src={product?.productImages?.[0]?.image}
                   alt={product.name}
@@ -49,27 +48,26 @@ const Home = () => {
                   }
                 />
               </div>
-              <div className="productlist-products-content">
+              <div className={styles.product_info}>
                 <Link to={`/product/${product?.name}?id=${product?._id}`}>
-                  <h6>{product.name}</h6>
+                  <h6 className={styles.product_name}>{product.name}</h6>
                 </Link>
-
-                <span>${product.price}</span>
-                <p>{product.location}</p>
+                <span className={styles.product_price}>${product.price}</span>
+                <p className={styles.location}>{product.location}</p>
               </div>
             </div>
           ))}
         </div>
+
         {products?.data?.hasNextPage && (
-          <div className="home-products-button">
+          <div className={styles.view_more_btn_container}>
             <button type="button" onClick={() => setLimit(limit + 10)}>
               View more
             </button>
           </div>
         )}
-        <div className="home-city">
-          <SeachByCities />
-        </div>
+
+        <SeachByCities />
       </div>
     </>
   );

@@ -1,6 +1,4 @@
 /** @format */
-
-// import { Link } from 'react-router-dom'
 import "./Header.css";
 import img from "../../assets/images/logo.png";
 import img1 from "../../assets/images/Vector.png";
@@ -143,22 +141,35 @@ const Header = () => {
               <button>Get the app</button>
             </div>
             <div className="navbar-right-items">
-              <ul className="links">
-                <li className={location.pathname === "/" ? "active" : ""}>
-                  <Link to={"/"}>Home</Link>
-                </li>
-                <li className={location.pathname === "/chat" ? "active" : ""}>
-                  <Link to={"/chat"}>Chat</Link>
-                </li>
-                <li className={location.pathname === "/post" ? "active" : ""}>
-                  <Link to={"/post"}>Post</Link>
-                </li>
-                <li
-                  className={location.pathname === "/mylisting" ? "active" : ""}
-                >
-                  <Link to={"/mylisting"}>My Listing</Link>
-                </li>
-              </ul>
+              {isLoggedIn ? (
+                <ul className="links">
+                  <li className={location.pathname === "/" ? "active" : ""}>
+                    <Link to={"/"}>Home</Link>
+                  </li>
+                  <li className={location.pathname === "/chat" ? "active" : ""}>
+                    <Link to={"/chat"}>Chat</Link>
+                  </li>
+                  <li className={location.pathname === "/post" ? "active" : ""}>
+                    <Link to={"/post"}>Post</Link>
+                  </li>
+                  <li
+                    className={
+                      location.pathname === "/mylisting" ? "active" : ""
+                    }
+                  >
+                    <Link to={"/mylisting"}>My Listing</Link>
+                  </li>
+                </ul>
+              ) : (
+                <ul className="links">
+                  <li className={location.pathname === "/" ? "active" : ""}>
+                    <Link to={"/"}>Home</Link>
+                  </li>
+                  <li onClick={() => setShow(true)}>Chat</li>
+                  <li onClick={() => setShow(true)}>Post</li>
+                  <li onClick={() => setShow(true)}>My Listing</li>
+                </ul>
+              )}
 
               {isLoggedIn && (
                 <img

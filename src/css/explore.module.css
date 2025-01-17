@@ -1,60 +1,56 @@
-/**
- * Container styling
- *
- * @format
- */
+/** @format */
 
-.browse-list-container {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
   padding: 20px;
-  /* font-family: Arial, sans-serif; */
   color: #000;
 }
 
-/* Header styling */
-.browse-header {
+.headline {
   font-size: 32px;
-  font-weight: bold;
+  font-weight: 600;
   margin-bottom: 20px;
-  font-family: Montserrat;
+  font-family: Montserrat !important;
 }
 
-.browse-grid {
+.list_container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px 24px;
 }
 
-.browse-item {
+.browse_item {
   font-size: 14px;
   margin: 0;
   color: #333;
   cursor: pointer;
-  font-family: Quicksand;
+  font-family: Quicksand !important;
+  font-weight: 800;
 }
 
-.browse-item:hover {
+.browse_item:hover {
   color: #e25845;
   text-decoration: underline;
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
-  .browse-grid {
+  .list_container {
     grid-template-columns: repeat(3, 1fr);
-    /* 3 columns for medium screens */
   }
 }
 
 @media (max-width: 768px) {
-  .browse-grid {
+  .list_container {
     grid-template-columns: repeat(2, 1fr);
-    /* 2 columns for smaller screens */
   }
 }
 
 @media (max-width: 480px) {
-  .browse-grid {
+  .list_container {
     grid-template-columns: repeat(1, 1fr);
-    /* 1 column for very small screens */
   }
 }

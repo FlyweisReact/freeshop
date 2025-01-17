@@ -15,19 +15,19 @@
 }
 
 body {
-  font-family: Lato !important;
+  /* font-family: Lato !important; */
   margin: 0;
   padding: 0;
 }
 
-code {
+/* code {
   font-family: Lato !important;
 }
 
 html,
 * {
   font-family: Lato !important;
-}
+} */
 
 :root {
   margin: 0;

@@ -1,16 +1,6 @@
 /** @format */
 
 import "./AboutUs.css";
-import img from "../../assets/images/aboutus.jpg";
-import img1 from "../../assets/images/img3.jpg";
-import img2 from "../../assets/images/img4.jpg";
-import img3 from "../../assets/images/img20.jpg";
-import img4 from "../../assets/images/img21.jpg";
-import img5 from "../../assets/images/img22.jpg";
-import img6 from "../../assets/images/img23.jpg";
-import img7 from "../../assets/images/img24.jpg";
-import img8 from "../../assets/images/img25.jpg";
-import img9 from "../../assets/images/img26.jpg";
 import { useEffect, useState } from "react";
 import { getApi } from "../../Repository/Api";
 import endPoints from "../../Repository/apiConfig";
@@ -38,8 +28,6 @@ const AboutUs = () => {
       setItem(response?.data?.[0]);
     }
   }, [response]);
-
-  console.log(blogs?.data);
 
   return (
     <>
