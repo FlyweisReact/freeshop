@@ -2,7 +2,6 @@
 
 import "./Press.css";
 import { FaArrowRightLong } from "react-icons/fa6";
-import img1 from "../../assets/images/img45.jpg";
 import { useEffect, useState } from "react";
 import { getApi } from "../../Repository/Api";
 import endPoints from "../../Repository/apiConfig";

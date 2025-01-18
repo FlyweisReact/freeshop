@@ -334,32 +334,41 @@ const LoginModalsignup = (props) => {
     }
   }, [props]);
 
-  const handleGetLocation = () => {
+  const getCurrentLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
-          fetch(endPoints.getLocation({ lat: latitude, long: longitude }))
-            .then((response) => response.json())
-            .then((data) => {
-              const location = data.address?.city || data.display_name;
-              setLatitude(latitude);
-              setLongitude(longitude);
-              setLocation(location);
-              setPinCode(data?.address?.postcode);
-            })
-            .catch((error) => {
-              console.error("Error fetching location data:", error);
-            });
+          const { latitude, longitude } = position.coords;
+          setLatitude(latitude);
+          setLongitude(longitude);
+          getAddressFromCoordinates(latitude, longitude);
         },
-        (error) => {
-          console.error("Error getting location:", error);
-          alert("Unable to retrieve location. Please check your permissions.");
+        (err) => {
+          console.log(err);
+        },
+        {
+          enableHighAccuracy: true,
+          timeout: 10000,
+          maximumAge: 0,
         }
       );
     } else {
-      alert("Geolocation is not supported by your browser.");
+      console.log("Geolocation is not supported by your browser.");
+    }
+  };
+
+  const getAddressFromCoordinates = async (latitude, longitude) => {
+    const apiKey = import.meta.env.VITE_GOOGLE_MAP_KEY;
+    const geocodingUrl = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${apiKey}`;
+    try {
+      const response = await fetch(geocodingUrl);
+      const data = await response.json();
+      if (data.status === "OK") {
+        const address = data.results[0].formatted_address;
+        setLocation(address);
+      }
+    } catch (error) {
+      console.error("Error fetching address:", error);
     }
   };
 
@@ -446,7 +455,7 @@ const LoginModalsignup = (props) => {
               <h3>Where are you searching?</h3>
               <div
                 className="location-btn-modal"
-                onClick={() => handleGetLocation()}
+                onClick={() => getCurrentLocation()}
               >
                 <IoLocationSharp />
                 <p>Get my location</p>

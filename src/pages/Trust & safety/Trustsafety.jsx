@@ -1,33 +1,25 @@
 /** @format */
 
 import "./Trustsafety.css";
-import trustImage from "../../assets/images/img28.jpg";
-import smilingPerson from "../../assets/images/img29.png";
-import plantsImage from "../../assets/images/img30.png";
 import { useEffect, useState } from "react";
 import { getApi } from "../../Repository/Api";
 import endPoints from "../../Repository/apiConfig";
-
 const TrustSection = () => {
   const [response, setResponse] = useState(false);
   const [item, setItem] = useState(null);
-
   const fetchHandler = () => {
     getApi(endPoints.trust_safety, {
       setResponse,
     });
   };
-
   useEffect(() => {
     fetchHandler();
   }, []);
-
   useEffect(() => {
     if (response) {
       setItem(response?.data?.[0]);
     }
   }, [response]);
-
   return (
     <>
       {response && (
@@ -73,5 +65,4 @@ const TrustSection = () => {
     </>
   );
 };
-
 export default TrustSection;

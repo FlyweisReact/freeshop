@@ -81,3 +81,26 @@
   cursor: pointer;
   font-family: Quicksand;
 }
+
+@media (max-width: 575.98px) {
+  .product_container {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+  .product {
+    width: 160px;
+  }
+  .product .thumbnail {
+    width: 160px;
+    height: 160px;
+  }
+  .product_info .product_name {
+    font-size: 14px;
+    line-height: normal;
+  }
+  .product_info .product_price {
+    font-size: 16px;
+  }
+  .product_info .location {
+    font-size: 14px;
+  }
+}

@@ -1,8 +1,5 @@
 /** @format */
 
-.trust-container {
-}
-
 .trust-top {
   height: 600px;
   overflow: hidden;
@@ -89,7 +86,6 @@
   color: #000000;
   margin: 0;
   font-family: Montserrat !important;
-
 }
 
 .trust-middle-right p {
@@ -110,7 +106,6 @@
   text-decoration: underline;
   cursor: pointer;
   font-family: Quicksand !important;
-
 }
 
 .trust-middle-bottom {

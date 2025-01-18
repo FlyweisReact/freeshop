@@ -93,13 +93,13 @@ const FindJobs = () => {
             ))}
           </div>
           <div className="findjob-jobs">
-            {/* <div className="findjob-jobs-location">
-              <IoLocationSharp />
-              <h6>Beaumont, TX 77707, USA</h6>
-            </div> */}
             <div className="findjob-jobs-div">
               {response?.data?.docs?.map((item) => (
-                <Link to={`/jobs/${item?._id}`} key={item?._id} className="link">
+                <Link
+                  to={`/jobs/${item?._id}`}
+                  key={item?._id}
+                  className="link"
+                >
                   <div className="findjob-job">
                     <div className="findjob-job-image">
                       <img src={item?.image} alt="" />

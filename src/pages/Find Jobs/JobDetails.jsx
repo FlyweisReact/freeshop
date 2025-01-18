@@ -34,9 +34,6 @@ const JobDetails = () => {
     fetchSimilarJobs();
   }, []);
 
-
-  console.log(response)
-
   return (
     <>
       <div className="blog-container">

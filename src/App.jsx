@@ -1,11 +1,11 @@
 /** @format */
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import allRoutes from "./Routes/Routes";
 import MainLayout from "./layouts/MainLayout";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { ReactNotifications } from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
+import allRoutes from "./Routes/Routes";
 
 const App = () => {
   return (
@@ -13,13 +13,30 @@ const App = () => {
       <ReactNotifications />
       <MainLayout>
         <Routes>
-          {allRoutes.map((routeConfig, index) => (
-            <Route
-              path={routeConfig.route}
-              element={<routeConfig.component />} // Use JSX here
-              key={`routeConfig${index}`}
-            />
-          ))}
+          {allRoutes.map((routeGroup, index) => {
+            const Layout = routeGroup.layout;
+            if (Layout) {
+              return (
+                <Route element={<Layout />} key={`layoutRoute${index}`}>
+                  {routeGroup.routes.map((route) => (
+                    <Route
+                      path={route.path}
+                      element={route.element}
+                      key={`route${route.path}`}
+                    />
+                  ))}
+                </Route>
+              );
+            } else {
+              return routeGroup.routes.map((route) => (
+                <Route
+                  path={route.path}
+                  element={route.element}
+                  key={`route-without-layout${route.path}`}
+                />
+              ));
+            }
+          })}
         </Routes>
       </MainLayout>
     </Router>

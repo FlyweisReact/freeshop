@@ -76,9 +76,7 @@ const ProductList = () => {
   return (
     <>
       <div className="productlist-container">
-        <div className="home-app">
-          <QRcode />
-        </div>
+        <QRcode />
         <div className="home-app-filter">
           <TrackRoute pageName={categoryName} setSort={setSort} sort={sort} />
         </div>
@@ -145,3 +143,6 @@ const ProductList = () => {
 };
 
 export default ProductList;
+
+
+

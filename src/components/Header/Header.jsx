@@ -20,6 +20,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { isAuthenticated, LOGOUT } from "../../store/authSlice.js";
 import notification_img from "../../assets/images/notification.png";
 import { FaBarsStaggered } from "react-icons/fa6";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 const default_user_avatar =
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMg_4QMb_SkaPs0XXddwSldTXcgQCi2tdk0w&s";
@@ -215,13 +216,21 @@ const Header = () => {
           </div>
           <nav className="navbar-bottom-items">
             <ul>
-              {categories?.data?.map((item) => (
-                <li key={item?._id}>
-                  <Link to={`/category/${item?.name}?id=${item?._id}`}>
-                    {item?.name}
-                  </Link>
-                </li>
-              ))}
+              <Swiper
+                className="custom-swiper"
+                spaceBetween={20}
+                slidesPerView={"auto"}
+              >
+                {categories?.data?.map((item) => (
+                  <SwiperSlide style={{ width: "auto" }} key={item?._id}>
+                    <li>
+                      <Link to={`/category/${item?.name}?id=${item?._id}`}>
+                        {item?.name}
+                      </Link>
+                    </li>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </ul>
           </nav>
         </div>

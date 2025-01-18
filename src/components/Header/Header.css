@@ -210,8 +210,12 @@
 .navbar-bottom-job {
   position: relative;
   width: 100.22px;
+  display: block;
+  min-width: 100px;
 }
-
+.custom-swiper {
+  width: 100%;
+}
 .navbar-bottom-job h6 {
   font-weight: 700;
   font-size: 18px;
@@ -229,6 +233,7 @@
 
 .navbar-bottom-items {
   flex: 1;
+  width: 100%;
 }
 
 .navbar-bottom-items ul {
@@ -243,12 +248,12 @@
 
 .navbar-bottom-items li a {
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 15px;
   line-height: 24px;
   color: #121212;
   transition: color 0.3s;
-  font-family: Quicksand !important;
+  font-family: Quicksand;
 }
 
 .navbar-bottom-items li a:hover {
@@ -272,14 +277,6 @@
   color: #e25845;
   cursor: pointer;
   display: none;
-}
-
-/* XXL Large Devices (Widescreen Monitors , 1600px and up) */
-@media (min-width: 1600px) {
-}
-
-/* Extra Large Devices (Large Desktops, 1200px and up) */
-@media (min-width: 1200px) {
 }
 
 /* Large Devices (Large Desktops, 992px and up) */
@@ -410,5 +407,12 @@
   .navbar-right-items .links,
   .navbar-location span {
     display: none;
+  }
+  .navbar-bottom-div {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .navbar-bottom-job {
+    width: 100%;
   }
 }

@@ -45,7 +45,7 @@ const endPoints = {
     contactDetails: "api/v1/admin/Press/allPress",
     pressTopic: "api/v1/admin/allPressTopic",
     news: "api/v1/admin/allPressNewsForWebsite",
-    offerupNews : "api/v1/admin/allPressOfferUpNews"
+    offerupNews: "api/v1/admin/allPressOfferUpNews",
   },
 };
 

@@ -1,7 +1,6 @@
 /** @format */
 
 import "./QRcode.css";
-
 import img from "../../assets/images/img1.png";
 import img1 from "../../assets/images/bi_qr-code.png";
 
@@ -25,3 +24,4 @@ const QRcode = () => {
 };
 
 export default QRcode;
+                  

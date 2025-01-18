@@ -61,9 +61,7 @@ const MyListing = () => {
   return (
     <>
       <div className="mylisting-container">
-        <div className="home-app">
-          <QRcode />
-        </div>
+        <QRcode />
         <div>
           {response?.data?.docs?.map((item, index) => (
             <div className="mylisting-div" key={item?._id}>

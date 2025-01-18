@@ -25,7 +25,6 @@ const Help = () => {
     });
   };
 
-
   useEffect(() => {
     fetchHandler();
     fetchArticles();

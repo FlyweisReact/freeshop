@@ -45,8 +45,8 @@ const Home = () => {
                   alt={product.name}
                   onClick={() =>
                     navigate(`/product/${product?.name}?id=${product?._id}`)
-                  }
-                />
+                  }  
+                />     
               </div>
               <div className={styles.product_info}>
                 <Link to={`/product/${product?.name}?id=${product?._id}`}>
